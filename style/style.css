@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.header-bg-font{
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1em;
+    color: white;
+}
+.header-bg-image{
+    max-width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
