@@ -13,3 +13,18 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.header-bg-p-container{
+    padding: 17px 0px 10px 0px;
+}
+.header-bg-p-font{
+    font-size: 18px;
+    margin-top: 1rem;
+}
+
+.header-bg-button-container{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+   
+}
