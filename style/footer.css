@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+footer{
+    background-color: #383838;
+    width: 100%;    
+    color: white;
+}
+
+.footerPhoto{
+    width: 200px;
+    height: 50px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/Unspoken_Smiles_text_with_icon_white-2.webp);
+}
+.footerBorder{
+    width: 70px;
+    border: 1px solid blue;
+}
+.footerLocation{
+    height:min-content;
+}
+.footerOfficeImg{
+    background-image: url(img/unbound-img030.webp);
+    width: 220px;
+    height: 150px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.linksUl li a{
+    text-decoration: none;
+    color: white;
+}
+.linksUl li a:hover{
+    color: rgb(59,55,221);
+    transition: .33s;
+}
