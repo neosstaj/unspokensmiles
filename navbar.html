@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAVBAR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style/navbar.css">
+</head>
+<body>
+    <div class="container navbar-container">
+        <div class="row navbar-row">
+            <!-- NAVBAR LOGO IMAGE -->
+            <div class="col-lg-3 navbar-logo">
+                <div class="navbar-logo-image">
+                    <a href="#">
+                        <img src="/img/logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-6 col-lg-6 navbar-menu">
+                <!-- HAMBURGER ICON(RESPONSIVE GORUNUM İLK BASTA DİSPLAY NONE) -->
+                <div class="navbar-hamburger-icon">
+                    <span class="hamburger-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </span>
+                </div>
+                <!-- MENU LİSTESİ -->
+                <div class="navbar-menu-list">
+                    <ul class="navbarList">
+                        <li class="navbar-dropdown">
+                            <button class="dropdown-button">WHY ORAL HEALTH?</button>
+                        </li>
+                        <li class="navbar-dropdown">
+                            <div class="navbar-dropdown-button">
+                                <button class="dropdown-button">OUR WORK</button>
+                                <span class="navbar-icon">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </span>
+                            </div>
+                            <!-- DROPDOWN MENU -->
+                            <div class="navbar-dropdown-hover">
+                                <ul class="dropdown-hover-list">
+                                    <li class="dropdown-link">
+                                        <a href="#">DENTAL CLINIC</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">FELLOWSHIP</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">ZERO CAVITY INITIATIVE</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="navbar-dropdown">
+                            <div class="navbar-dropdown-button">
+                                <button class="dropdown-button">GET INVOLVED</button>
+                                <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
+                            </div>
+                            <!-- DROPDOWN MENU -->
+                            <div class="navbar-dropdown-hover">
+                                <ul class="dropdown-hover-list">
+                                    <li class="dropdown-link">
+                                        <a href="#">PARTNERSHIP</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">LEADERSHIP COUNCIL</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">TAKE THE PLEDGE</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">VOLUNTEER</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">THE GLOBAL GOALS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="navbar-dropdown">
+                            <div class="navbar-dropdown-button">
+                                <button class="dropdown-button">ABOUT US</button>
+                                <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
+                            </div>
+                            <!-- DROPDOWN MENU -->
+                            <div class="navbar-dropdown-hover">
+                                <ul class="dropdown-hover-list">
+                                    <li class="dropdown-link">
+                                        <a href="#">LEADERSHIP TEAM</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">TRANSPARENCY</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">CAREERS</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">BLOG</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- NAVBAR DONATE BUTTON -->
+            <div class="col-6 col-lg-3 navbar-donate">
+                <div class="navbar-donete-button">
+                    <button class="donateButton">DONATE NOW</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- FONT AWESOME ICON CDN-->
+     <script src="https://kit.fontawesome.com/a09e04a105.js" crossorigin="anonymous"></script>
+
+     <!-- BOOTSTRAP JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- HAMBURGER ICON CLICK TANIMLANMASI(RESPONSIVE TASARIMDA DROPDOWN MENULERI AÇIYOR) -->
+    <script>
+        const clickIcon=document.querySelector(".hamburger-icon")
+        const navbarList=document.querySelector(".navbar-menu-list")
+        clickIcon.addEventListener("click",function(){
+            navbarList.classList.toggle("responsive")
+        })
+    </script>
+</body>
+</html>
