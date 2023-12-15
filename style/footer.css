@@ -11,11 +11,11 @@ footer{
 
 .footerPhoto{
     width: 200px;
-    height: 50px;
+    height: 27.44px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url(img/Unspoken_Smiles_text_with_icon_white-2.webp);
+    
 }
 .footerBorder{
     width: 70px;
@@ -23,6 +23,7 @@ footer{
 }
 .footerLocation{
     height:min-content;
+    text-align: center;
 }
 .footerOfficeImg{
     background-image: url(img/unbound-img030.webp);
@@ -32,6 +33,58 @@ footer{
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.footerOffice{
+    position: relative;
+    
+}
+.footerOfficei1{
+    position: absolute;
+    left: 18%;
+    top: -5%;
+    color: rgb(59,55,221);
+    transition: width 2s;
+
+    
+   
+}
+.footerOfficei1:hover{
+    cursor: pointer;
+    
+}
+.footerOfficei1:hover::after{
+    color: white;
+   
+    content: "United States";
+     
+    margin-top: 10px; /* İçeriğin yüksekliğini ayarlayabilirsiniz */
+    position: absolute;
+    top: 100%; /* İçeriğin altındaki mesafeyi belirleyebilirsiniz */
+    left: -30px;
+}
+
+.footerOfficei2{
+    position: absolute;
+    color: rgb(59,55,221);
+    left: 35%;
+    top: 35%;
+    z-index: 111;
+    transition: 2s;
+}
+.footerOfficei2:hover{
+    cursor: pointer;
+}
+.footerOfficei2:hover::after{
+    color: white;
+    content: "Costa Rica";
+    margin-top: 10px; /* İçeriğin yüksekliğini ayarlayabilirsiniz */
+    position: absolute;
+    top: 100%; /* İçeriğin altındaki mesafeyi belirleyebilirsiniz */
+    left: -30px;
+}
+
+
+
 .linksUl li a{
     text-decoration: none;
     color: white;
@@ -39,4 +92,138 @@ footer{
 .linksUl li a:hover{
     color: rgb(59,55,221);
     transition: .33s;
+}
+.footerInput{
+    opacity: 1;
+    color: rgb(169,169,169);
+    /* width: 71%; */
+    height: 50px;
+    border-radius: 20px 20px 20px 20px;
+    background-color:rgb(68,68,68) ;
+    border: none;
+}
+.footerInput::placeholder{
+    color: rgb(169,169,169);
+}
+.footerInput:hover{
+    border: 1px solid rgb(105, 102, 102);
+    
+}
+.footerInputBox{
+    padding: .2rem;
+width: 85%;
+border: 2px solid rgb(105, 102, 102);
+border-radius: 20px 20px 20px 20px;
+}
+
+.footerInputBox button{
+    border-radius: 20px 20px 20px 20px;
+    /* width: 27%; */
+    height: 50px;
+    border: 1px solid rgb(191, 191, 191);
+    background-color: rgb(62,55,255);
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+
+
+.socialBox{
+    background-color: rgb(62,55,255);
+    display: inline-flex;
+    border-radius: 20%;
+    padding:.5rem 1.2rem;
+   
+}
+.socialHref{
+   color: white;
+}
+.col-3{
+    border-right:rgb(87,87,87) solid 1px ;
+
+}
+.footerPolicy{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    
+
+    
+}
+.footerPolicy:hover{
+    color: rgb(62,55,255);
+    transition: .33s;
+}
+
+
+@media screen and (max-width:1199px ){
+    .footerOfficei1{
+        position: absolute;
+        left: 10%;
+        top: -5%;
+        color: rgb(59,55,221);
+        
+    
+    }
+    .footerOfficei2{
+        position: absolute;
+        color: rgb(59,55,221);
+        left: 23%;
+        top: 35%;
+        z-index: 111;
+    }
+}
+@media screen and (max-width:767px ){
+    .footerOfficei1{
+        position: absolute;
+        left: 23%;
+        top: -5%;
+        color: rgb(59,55,221);
+        
+        
+    
+    }
+    .footerOfficei2{
+        position: absolute;
+        color: rgb(59,55,221);
+        left: 48%;
+        top: 35%;
+        z-index: 111;
+    }
+}
+@media screen and (max-width:575px ){
+    .footerOfficei1{
+        position: absolute;
+        left: 40%;
+        top: -5%;
+        color: rgb(59,55,221);
+        
+        
+    
+    }
+    .footerOfficei2{
+        position: absolute;
+        color: rgb(59,55,221);
+        left: 50%;
+        top: 35%;
+        z-index: 111;
+    }
+}
+@media screen and (max-width:415px ){
+    .footerOfficei1{
+        position: absolute;
+        left: 35%;
+        top: -5%;
+        color: rgb(59,55,221);
+        
+        
+    
+    }
+    .footerOfficei2{
+        position: absolute;
+        color: rgb(59,55,221);
+        left: 49%;
+        top: 35%;
+        z-index: 111;
+    }
 }
