@@ -1,53 +1,612 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&display=swap');
 
-.header-bg-font{
+.header-bg-font {
     font-family: "Playfair Display", Sans-serif;
     font-size: 80px;
     font-weight: 900;
     line-height: 1em;
     color: white;
+    padding-bottom: 3rem;
 }
-.header-bg-image{
+
+.header-bg-image {
     max-width: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.header-bg-p-container{
+.header-bg-p-container {
     padding: 17px 0px 10px 0px;
 }
-.header-bg-p-font{
+
+.header-bg-p-font {
     font-size: 18px;
     margin-top: 1rem;
 }
 
-.header-bg-button-container{
+.header-bg-button-container {
     display: flex;
     flex-direction: column;
     width: 48%;
-   
+
 }
-.f-18{
+
+.f-18 {
     font-size: 18px;
 }
-.b-font-family{
-    font-family: Arial,  sans-serif;
+
+.b-font-family {
+    font-family: Arial, sans-serif;
     list-style: none;
     color: white;
     text-decoration: none;
     font-size: 16px;
 }
-.b-style{
+
+.b-style {
     background: #050505;
     border-color: #000000;
     color: #fff;
     border: none;
-    padding: 16px 16px 16px 16px;
     border-radius: 40px;
-    width: 53%;
+    padding: 0.8rem;
+    width: 320px;
 }
 
-.btn-round:hover{
+.btn-round:hover {
     background-color: #050505;
+}
+
+.donate-btn {
+    background-color: #080298;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid #080298;
+    height: 54px;
+    font-family: 'Lato', sans-serif;
+}
+
+.donate-btn:hover {
+    color: #080298;
+    background-color: grey;
+    border: 1px solid grey;
+}
+
+.gift-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: white;
+    color: #6c757d;
+    border-radius: 25px;
+    border: 2px solid #6c757d;
+    font-size: 18px;
+    padding: 0.300rem 0.75rem;
+    display: block;
+
+    text-align: center;
+    width: 100%;
+}
+
+.gift-btn:hover {
+    color: white;
+    background-color: gray;
+    border: 2px solid grey;
+}
+
+.donate-input {
+    height: 50px;
+    background-color: white;
+    border: 1px;
+    font-size: 18px;
+    font-weight: normal;
+    position: relative;
+}
+
+
+.donate-span {
+    background-color: white !important;
+}
+
+.btn-color {
+
+    color: #B2B3B5;
+}
+
+.donate-btn-outline {
+
+    color: #080298;
+    border: 2px solid #080298;
+
+}
+
+.donate-btn-outline:hover {
+    background-color: #080298;
+    border: 2px solid #080298;
+
+}
+
+.btn-row .btn-light:hover {
+    color: white;
+    background-color: gray;
+    border: 1px solid grey;
+
+}
+
+.bg-filter {
+    transition: 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin-top: -185px;
+    margin-bottom: 0px;
+    padding: 318px 15px 150px 15px;
+}
+
+.bg-header {
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(55, 0, 255, 0.808);
+}
+
+.number-content {
+    height: 100px;
+    border-right: 1px solid rgba(255, 255, 255, 0.342);
+    color: white;
+}
+
+.number-span {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+}
+
+.number-row {
+    background-color: #3E37FF;
+    border-radius: 30px;
+    position: absolute;
+    width: 600px;
+    bottom: -50px;
+    left: 50px;
+
+}
+
+.number-img {
+    display: block;
+    width: 90%;
+    border-radius: 30px;
+
+
+}
+
+.section-2-h3 {
+    color: #929292;
+    font-size: 29px;
+    font-family: "Playfair Display", Sans-serif;
+    font-weight: 700;
+}
+
+.section-2-p {
+    text-align: left;
+    color: #838383;
+}
+
+.section-2-list {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.1em;
+}
+
+.f-68 {
+    font-size: 68px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 1;
+    color: #FFFFFF;
+}
+
+.f-28 {
+    font-size: 28px;
+    font-family: "Playfair Display", Sans-serif;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.f-15 {
+    font-size: 15px;
+    color: #FFFFFF;
+    font-weight: 600;
+
+}
+
+.section-2-box-container {
+    background-color: #3E37FF;
+    border-radius: 20px;
+}
+
+.md-p-50 {
+    padding-top: 0;
+}
+
+.blue {
+    color: #1E0DFF;
+}
+
+.f50-h3 {
+    font-family: "Playfair Display", Sans-serif;
+    ;
+    font-size: 50px;
+    font-weight: 500;
+    color: #3E37FF;
+    line-height: 1.1em;
+
+}
+
+.f-weight-700 {
+    font-weight: 700 !important;
+}
+
+.black-hover-container:hover .f-weight-700 {
+    color: black;
+}
+
+.blue-border {
+    width: 60px;
+    height: 3px;
+    background-color: #2575fc;
+}
+
+.map-container {
+    position: relative;
+}
+
+.round-container {
+    position: absolute;
+    right: 35%;
+    top: 62%;
+    z-index: 5;
+
+}
+
+@keyframes roundanimasyon {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+.round-content {
+    position: relative;
+    height: 34px;
+    width: 34px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    color: rgba(26, 43, 99, .2);
+    cursor: pointer;
+}
+
+.round-content::after {
+    background-color: #1E0DFF;
+    width: 20px;
+    height: 20px;
+
+}
+
+.round1,
+.round2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    color: inherit;
+    -webkit-box-shadow: 0 0 0 15px currentColor;
+    box-shadow: 0 0 0 15px currentColor;
+    animation: roundanimasyon 4s infinite cubic-bezier(.4, 0, 1, 1) both;
+}
+
+.round2 {
+    animation-delay: 0.5s;
+}
+
+.round-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 6px;
+    width: 6px;
+    background-color: #2575fc;
+    border-radius: inherit;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    content: "";
+
+}
+
+.round-arrow {
+    position: absolute;
+    display: block;
+    height: 2px;
+    bottom: 13px;
+    width: 0px;
+    transition: width 0.25s ease-out;
+    z-index: -1;
+    left: 20px;
+    background-color: #2575fc;
+
+    
+}
+.round-arrow-active{
+    width: calc(350px / 2);
+}
+
+
+.round-container-2 {
+    right: 47% !important;
+    top: 58%;
+}
+
+.round-container-3 {
+    right: 30% !important;
+    top: 56%;
+}
+
+.round-container-4 {
+    right: 35% !important;
+    top: 56%;
+}
+
+.round-container-5 {
+    right: 38% !important;
+    top: 46%;
+}
+.h3-card{
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-family: "Playfair Display", Sans-serif;
+
+}
+.round-arrow-5 {
+    position: absolute;
+    display: block;
+    height: 2px;
+    bottom: 13px;
+    width: 0px;
+    rotate: 270deg;
+    transition: 0.25s ease-in;
+    z-index: -1;
+    left: 20px;
+    background-color: #2575fc;
+
+    
+}
+.round-arrow-5-active {
+    width: 40px !important; 
+    height: 2px;
+    bottom: 50px;
+    z-index: -1;
+    left: -4px;
+}
+
+.card1{
+    z-index: 44;
+    position: absolute;
+    left: 41%;
+    bottom: 56.5%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+
+.card2{
+    z-index: 44;
+    position: absolute;
+    left: 55%;
+    bottom: 41%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+}
+.card3{
+    z-index: 44;
+    position: absolute;
+    left: 65%;
+    bottom: 44%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+.card4{
+    z-index: 44;
+    position: absolute;
+    left: 70%;
+    bottom: 44%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+.card5{
+    z-index: 44;
+    position: absolute;
+    left: 65%;
+    bottom: 38%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+
+.card-active{
+    opacity: 1;
+    visibility: visible;
+}
+/* RESPONSİVE TASARİM */
+@media only screen and (max-width: 990px) {
+    .header-text {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1398px) {
+    .number-row {
+        width: 500px;
+
+    }
+
+    .number-span {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 1198px) {
+    .number-row {
+        width: 400px;
+    }
+
+    .number-span {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .number-row {
+        width: 600px;
+
+    }
+
+    .md-p-50 {
+        padding-top: 50px;
+    }
+
+    .number-span {
+        font-size: 30px;
+    }
+
+    .number-img {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 766px) {
+    .number-row {
+        width: 450px;
+    }
+
+    .number-span {
+        font-size: 30px;
+    }
+
+    .number-img {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .number-row {
+        width: 450px;
+        left: 50px;
+        bottom: -50px;
+
+    }
+    .section3{
+        margin-top: 400px !important;
+    }
+    .card1{
+        left: 1%;
+        bottom: 70%;
+        z-index: 226;
+    }
+    .card2{
+        left: 5%;
+        bottom: 65%;
+        z-index: 225;
+    }
+    .card3{
+        left: 2%;
+        bottom: 60%;
+        z-index: 224;
+    }
+    .card4{
+        left: 5%;
+        bottom: 55%;
+        z-index: 224;
+    }
+    .card5{
+        left: 3%;
+        bottom: 50%;
+    }
+    .round-arrow{
+        rotate: 270deg;
+        bottom: 100px;
+        transition: 0.25s ease-in;
+        z-index: -1;
+        left: -70px;
+        background-color: #2575fc;
+    
+    }
+
+}
+
+@media only screen and (max-width: 540px) {
+    .number-row {
+        width: 450px;
+        left: 40px;
+        bottom: -100px;
+
+    }
+
+}
+
+@media only screen and (max-width: 528px) {
+    .number-row {
+        width: 430px;
+
+
+    }
+
+}
+
+@media only screen and (max-width: 504px) {
+    .number-row {
+        width: 400px;
+
+
+    }
+
+}
+
+@media only screen and (max-width: 475px) {
+    .number-row {
+        width: 370px;
+        left: 35px;
+        bottom: -150px;
+
+    }
+
+}
+
+@media only screen and (max-width: 430px) {
+    .number-row {
+        width: 300px;
+        left: 35px;
+        bottom: -150px;
+
+    }
+
 }
