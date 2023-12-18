@@ -291,7 +291,7 @@
 
 
 
-
+<!-- SECTİON 2  -->
 <section class="section3" style="margin-top: 300px;">
   <div class="container">
     <div class="row">
@@ -311,7 +311,8 @@
             <div class="card-body">
               <h3 class="h3-card">GUATEMALA
               </h3>
-              <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
+              <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have
+                served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
               <a href="#" class="btn btn-primary " style="padding: 10px 25px 10px 25px;">DONATE</a>
             </div>
           </div>
@@ -320,7 +321,8 @@
             <div class="card-body">
               <h3 class="h3-card">HAITI
               </h3>
-              <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
+              <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have
+                served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
               <a href="#" class="btn btn-primary " style="padding: 10px 25px 10px 25px;">DONATE</a>
             </div>
           </div>
@@ -329,7 +331,8 @@
             <div class="card-body">
               <h3 class="h3-card">HAITI
               </h3>
-              <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
+              <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have
+                served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
               <a href="#" class="btn btn-primary " style="padding: 10px 25px 10px 25px;">DONATE</a>
             </div>
           </div>
@@ -338,7 +341,8 @@
             <div class="card-body">
               <h3 class="h3-card">HAITI
               </h3>
-              <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
+              <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have
+                served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
               <a href="#" class="btn btn-primary " style="padding: 10px 25px 10px 25px;">DONATE</a>
             </div>
           </div>
@@ -365,7 +369,7 @@
               <div class="round1"></div>
               <div class="round2"></div>
               <div class="round-dot"></div>
-              <div class="round-arrow round-arrow-3 "></div>
+              <div class="round-arrow round-arrow-3 " id="rnd-3"></div>
             </div>
           </div>
           <div class="round-container-4 round-container">
@@ -407,7 +411,60 @@
     </div>
   </div>
 </section>
+<!-- SECTİON 2 END -->
 
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="h3 section-3-h3">Make a difference today</div>
+        <div class="d-flex pt-3 pb-3 justify-content-between align-items-center" style="width: 8%;">
+
+          <i class="fa-solid fa-circle" style="    font-size: 6px;
+            color: #3E37FF;"></i>
+          <i class="fa-solid fa-circle" style="    font-size: 6px;
+            color: #3E37FF;"></i>
+          <i class="fa-solid fa-circle" style="    font-size: 6px;
+            color: #3E37FF;"></i>
+          <div class="line" style="width: 40px;
+            height: 4px;
+            background-color: #3E37FF; border-radius:10px">
+
+          </div>
+        </div>
+        <p class="m-0" style="font-size: 16px;     font-weight: 400;">There are many ways you can help us create equal
+          access to oral health care for disadvantaged children inCosta Rica.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="card mb-3">
+          <div class="row g-0 " style="    padding: 20px 5px 50px 5px;
+          ">
+            <div class="col-2 section-3-card-icon">
+              <i class=" fas fa-hand-holding-usd "></i>
+            </div>
+            <div class="col-10">
+              <div class="card-body">
+                <h3 class="h3-card-title">
+                  Support Our Work </h3>
+                <p class="m-0" style="  color: #565656;  font: size 15px; ">100% of your donation will directly fund our programs serving women and children in need.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+    </div>
+  </div>
+</section>
 
 
 
@@ -444,6 +501,11 @@
         let card4 = document.getElementById('card4')
         card4.classList.toggle('card-active')
         roundArrow3.classList.toggle('round-arrow-active')
+        roundArrow3.classList.toggle('test-opacity')
+        let opacitys =window.getComputedStyle(
+          document.getElementById('rnd-3'),'::after'
+        ).getPropertyValue('opacitys')
+        opacitys.sty
       })
     })
   })

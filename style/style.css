@@ -316,7 +316,21 @@
 .round2 {
     animation-delay: 0.5s;
 }
-
+.round-arrow-3::after{
+    content: '';
+    position: absolute;
+    top: -13px;
+    height: 5px;
+    rotate: 270deg;
+    width: 20px;
+    opacity: 0;
+    left: 162px;
+    background-color: red;
+    z-index: 200;
+}
+.test-opacity{
+    opacity: 1 !important;
+}
 .round-dot {
     position: absolute;
     left: 50%;
@@ -450,6 +464,30 @@
     opacity: 1;
     visibility: visible;
 }
+
+
+.section-3-h3{
+    font-size: 35px;
+    font-weight: 700;
+    color: black;
+    font-family: "Playfair Display", Sans-serif;
+}
+.section-3-card-icon{
+    font-size: 40px;
+    color: #3E37FF;
+    text-align: center;
+    padding-top: 0.7rem;
+ 
+
+
+}
+.h3-card-title{
+    color: #000000;
+    font-family: "Playfair Display", Sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
 /* RESPONSİVE TASARİM */
 @media only screen and (max-width: 990px) {
     .header-text {
