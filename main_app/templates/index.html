@@ -3,6 +3,14 @@
 
 {% block site-content %}
 {% include "partials/_header.html" %}
+<a href="{%  url 'payment' %}">iyzico ile öde</a>
+<p>
+
+  {% for message  in  messages %}
+    {{message}}
+    
+  {% endfor %}
+</p>
 <!-- SECTİON 1  -->
 <section style="margin-bottom: 95px;">
     <div class="container">

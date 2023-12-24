@@ -19,9 +19,15 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from main_app.views import *
+from user_app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+    path('odeme',payment,name='payment'),
+    path('ok/',success,name='success'),
+    path('fail/',fail,name='fail'),
+    path('result/',result,name='result'),
+    path('register',register,name='register'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

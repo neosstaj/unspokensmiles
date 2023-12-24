@@ -15,9 +15,9 @@ function Monthly(btn){
     btn.classList.add('btn-active')
     document.getElementById('Monthly').classList.remove('btn-active')
 }
-  DonateBtn = document.getElementById('DonateBtn')
+  input_donate = document.getElementById('input-donate')
   function total25(btn){
-    DonateBtn.innerHTML = 'DONATE $25'
+    input_donate.value = '25'
     let btnactivate = document.querySelectorAll('.btn-donate')
     btnactivate.forEach(btnactivate =>{
       btnactivate.classList.remove('btn-active')
@@ -25,7 +25,7 @@ function Monthly(btn){
     btn.classList.add('btn-active') 
   }
   function total50(btn){
-    DonateBtn.innerHTML = 'DONATE $50'
+    input_donate.value = '50'
     let btnactivate = document.querySelectorAll('.btn-donate')
     btnactivate.forEach(btnactivate =>{
       btnactivate.classList.remove('btn-active')
@@ -34,7 +34,7 @@ function Monthly(btn){
   }
   function total100(btn){
 
-    DonateBtn.innerHTML = 'DONATE $100'
+    input_donate.value = '100'
     let btnactivate = document.querySelectorAll('.btn-donate')
     btnactivate.forEach(btnactivate =>{
       btnactivate.classList.remove('btn-active')
@@ -42,7 +42,7 @@ function Monthly(btn){
     btn.classList.add('btn-active')
   }
   function total150(btn){
-    DonateBtn.innerHTML = 'DONATE $150'
+    input_donate.value = '150'
     let btnactivate = document.querySelectorAll('.btn-donate')
     btnactivate.forEach(btnactivate =>{
       btnactivate.classList.remove('btn-active')
