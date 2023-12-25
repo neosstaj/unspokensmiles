@@ -1,0 +1,470 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block site-content %}
+{% include "partials/_header.html" %}
+<a href="{%  url 'payment' %}">iyzico ile öde</a>
+<p>
+
+  {% for message  in  messages %}
+    {{message}}
+    
+  {% endfor %}
+</p>
+<!-- SECTİON 1  -->
+<section style="margin-bottom: 95px;">
+    <div class="container">
+      <div class="add-container" style="height: 114px;"></div>
+      <div class="row">
+        <div class="col-12 col-lg-7 order-2 order-lg-1 md-p-50">
+          <div class="img-container" style="position: relative;">
+            <img class="number-img" src="{% static 'img/section1.jpg' %}" style="max-width: 100%; " alt="">
+            <div class="row align-items-center pt-4 pb-4 number-row">
+              <div class="col-6 p-0 col-sm-3 ">
+                <div class="number-content d-flex justify-content-start text-center align-items-center flex-column">
+                  <span class="number-span"><span class="number-span" id="Number1" data-count="50"></span>k+</span>
+                  <span>Oral Hygiene Kits <br> Distributed</span>
+                </div>
+              </div>
+              <div class="col-6 p-0 col-sm-3 ">
+                <div class="number-content d-flex justify-content-start text-center align-items-center flex-column pe-2 ">
+                  <span class="number-span" id="Number2" data-count="10000"></span>
+                  <span>Children Served</span>
+                </div>
+              </div>
+              <div class="col-6 p-0 col-sm-3">
+                <div class="number-content d-flex justify-content-start text-center align-items-center flex-column ">
+                  <span class="number-span" id="Number3" data-count="10000"></span>
+                  <span>Fellows by 2030 </span>
+                </div>
+              </div>
+              <div class="col-6 p-0 col-sm-3">
+                <div class="number-content d-flex justify-content-start text-center align-items-center flex-column">
+                  <span class="number-span" id="Number4"></span>
+                  <span>LATAM Countries</span>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-12 col-lg-5 md-p-200 order-1 order-lg-2">
+          <h5 style="    color: #3E37FF;">OUR CORE WORK</h5>
+          <h3 class="section-2-h3 pt-3">Oral disease is one of the world’s most pervasive health issues, yet it is one of
+            the
+            most overlooked and under-publicized.</h3>
+          <p class="section-2-p pt-3">We’re solving global oral health challenges locally to deliver lasting
+            impact&nbsp;to
+            disadvantaged communities in Costa Rica and eventually in the entire American Hemisphere</p>
+          <p class="pt-4">Through Our Global Network, We Offer:</p>
+          <div class="row pt-4">
+            <div class="col-8">
+              <ul class="p-0">
+                <li class="list-unstyled d-flex align-items-center justify-content-center">
+                  <i class="fas fa-check blue"></i>
+                  <p class="ps-3 section-2-list m-0">
+                    Oral health education through school-based partnerships</p>
+                </li>
+                <li class="list-unstyled d-flex align-items-center justify-content-center pt-3">
+                  <i class="fas fa-check blue"></i>
+                  <p class="ps-3 section-2-list m-0">
+                    A Fellowship that empowers local youth through sustainable careers in dentistry, and</p>
+                </li>
+                <li class="list-unstyled d-flex align-items-center justify-content-center pt-3">
+                  <i class="fas fa-check blue"></i>
+                  <p class="ps-3 section-2-list m-0">
+                    Access to oral health care services for disadvantaged communities that would not otherwise have the
+                    opportunity to be treated by a dentist in their lifetime.
+                    8
+                    YEARS
+                    OF SUSTAINABLE IMPACT
+  
+                    Learn More</p>
+                </li>
+  
+              </ul>
+            </div>
+            <div class="col-4">
+              <div
+                class="section-2-box-container w-100 h-100 d-flex justify-content-center align-items-center text-center flex-column">
+                <h2 class="f-68 mb-0">8</h2>
+                <h3 class="f-28 mb-0">YEARS</h3>
+                <p class="text-white">OF SUSTAINABLE IMPACT</p>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary text-white btn-blue">Learn
+            More</button>
+        </div>
+      </div>
+  
+    </div>
+    </div>
+  </section>
+  <!-- SECTİON 1 END -->
+  
+  <!-- SECTİON 2  -->
+  <section class="section3" style="margin-top: 300px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <div class="map-container">
+            <div class="card card-active card1 rounded-0" id="card1" style="width: 20rem; background-color: #3E37FF;">
+              <img class="card-img-top" src="{% static 'img/card1.jpg' %}" style="padding: 1rem;" alt="Card image cap">
+              <div class="card-body">
+                <h3 class="h3-card">UNITED STATES</h3>
+                <p class="card-text text-white pt-2">Make a special Giving Tuesday donation</p>
+                <a href="#" class="btn btn-primary " style="padding: 10px 25px 10px 25px;">DONATE</a>
+              </div>
+            </div>
+  
+            <div class="card card-active card2 rounded-0" id="card2" style="width: 20rem; background-color: #3E37FF;">
+              <img class="card-img-top" src="{% static 'img/card2.jpg' %}" style="padding: 1rem;" alt="Card image cap">
+              <div class="card-body">
+                <h3 class="h3-card">GUATEMALA
+                </h3>
+                <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have
+                  served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
+                <a href="#" class="btn btn-primary " style="padding: 10px 25px 10px 25px;">DONATE</a>
+              </div>
+            </div>
+            <div class="card card-active card3 rounded-0" id="card3" style="width: 20rem; background-color: #3E37FF;">
+              <img class="card-img-top" src="{% static 'img/card3.jpg' %}" style="padding: 1rem;" alt="Card image cap">
+              <div class="card-body">
+                <h3 class="h3-card">HAITI
+                </h3>
+                <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have
+                  served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
+                <a href="#" class="btn btn-primary " style="padding: 10px 25px 10px 25px;">DONATE</a>
+              </div>
+            </div>
+            <div class="card card-active card4 rounded-0" id="card4" style="width: 20rem; background-color: #3E37FF;">
+              <img class="card-img-top" src="{% static 'img/card4.jpg' %}" style="padding: 1rem;" alt="Card image cap">
+              <div class="card-body">
+                <h3 class="h3-card">HAITI
+                </h3>
+                <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have
+                  served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
+                <a href="#" class="btn btn-primary " style="padding: 10px 25px 10px 25px;">DONATE</a>
+              </div>
+            </div>
+            <div class="card card-active card5 rounded-0" id="card5" style="width: 20rem; background-color: #3E37FF;">
+              <img class="card-img-top" src="{% static 'img/card5.jpg' %}" style="padding: 1rem;" alt="Card image cap">
+              <div class="card-body">
+                <h3 class="h3-card">HAITI
+                </h3>
+                <p class="card-text text-white pt-2">So far through in-kind contributions from our partners, we have
+                  served over 2500+ children in Lomas de Pavas, Guatuso, Limon, Turrialba, Santa Ana, Rio Azul.</p>
+                <a href="#" class="btn btn-primary " style="padding: 10px 25px 10px 25px;">DONATE</a>
+              </div>
+            </div>
+  
+            <img src="{% static 'img/map.jpg' %}" style="max-width: 100%;" alt="">
+            <div class="round-container">
+              <div class="round-content round-container-1">
+                <div class="round1"></div>
+                <div class="round2"></div>
+                <div class="round-dot"></div>
+                <div class="round-arrow round-arrow-1 round-arrow-active"></div>
+              </div>
+            </div>
+            <div class="round-container-2 round-container">
+              <div class="round-content">
+                <div class="round1"></div>
+                <div class="round2"></div>
+                <div class="round-dot"></div>
+                <div class="round-arrow round-arrow-2  round-arrow-active"></div>
+              </div>
+            </div>
+            <div class="round-container-3 round-container">
+              <div class="round-content">
+                <div class="round1"></div>
+                <div class="round2"></div>
+                <div class="round-dot"></div>
+                <div class="round-arrow round-arrow-3 round-arrow-active" id="rnd-3"></div>
+              </div>
+            </div>
+            <div class="round-container-4 round-container">
+              <div class="round-content">
+                <div class="round1"></div>
+                <div class="round2"></div>
+                <div class="round-dot"></div>
+                <div class="round-arrow round-arrow-4 round-arrow-active "></div>
+              </div>
+            </div>
+            <div class="round-container-5 round-container">
+              <div class="round-content">
+                <div class="round1"></div>
+                <div class="round2"></div>
+                <div class="round-dot"></div>
+                <div class=" round-arrow-5 round-arrow-5-active"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 text-center ">
+          <div class="black-hover-container">
+            <h3 class="f50-h3 mb-0">Thinking </h3>
+            <h2 class="f50-h3 f-weight-700 mb-0 ">GLOBALLY</h2>
+            <h3 class="f50-h3 mb-0">Acting </h3>
+            <h2 class="f50-h3 f-weight-700  mb-0">LOCALLY</h2>
+          </div>
+          <div class="w-100 d-flex justify-content-center pt-3 pb-3">
+            <div class="blue-border"> </div>
+          </div>
+          <p>
+            We have helped bring healthier smiles to over 10,000 children in 9 countries across 4 continents--in Haiti,
+            India, Romania, El Salvador, Guatemala, Iraq, the Dominican Republic, Costa Rica, and the United States.
+          </p>
+          <p>
+            However, due to the pandemic, we have shifted our focus from global to the Americas starting in Costa Rica.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECTİON 2 END -->
+  
+  <!-- SECTİON 3  -->
+  <section class="section-3-background">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="h3 section-3-h3">Make a difference today</div>
+          <div class="d-flex pt-3 pb-3 justify-content-between align-items-center" style="width: 8%;">
+            <i class="fa-solid fa-circle" style="    font-size: 6px;
+              color: #3E37FF;"></i>
+            <i class="fa-solid fa-circle" style="    font-size: 6px;
+              color: #3E37FF;"></i>
+            <i class="fa-solid fa-circle" style="    font-size: 6px;
+              color: #3E37FF;"></i>
+            <div class="line" style="width: 40px;
+              height: 4px;
+              background-color: #3E37FF; border-radius:10px">
+  
+            </div>
+          </div>
+          <p class="m-0" style="font-size: 16px;     font-weight: 400;">There are many ways you can help us create equal
+            access to oral health care for disadvantaged children inCosta Rica.</p>
+        </div>
+      </div>
+      <div class="row section-3-row-shadow">
+        <div class="col-12 col-lg-4 ps-0 pe-0 pe-lg-3 pt-2">
+          <div class="card mb-3 rounded-0 border-0 section-3-card-background h-100">
+            <div class="row g-0 ">
+              <div class="col-2 section-3-card-icon">
+                <i class=" fas fa-hand-holding-usd "></i>
+              </div>
+              <div class="col-10">
+                <div class="card-body">
+                  <h3 class="h3-card-title">
+                    Support Our Work </h3>
+                  <p class="m-0" style="  color: #565656;  font: size 15px; ">100% of your donation will directly fund our
+                    programs serving women and children in need.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 ps-0 pe-0 pe-lg-3 pt-2">
+          <div class="card mb-3 rounded-0 border-0 section-3-card-background  h-100">
+            <div class="row g-0 ">
+              <div class="col-2 section-3-card-icon">
+                <i class=" fas fa-address-card "></i>
+              </div>
+              <div class="col-10">
+                <div class="card-body">
+                  <h3 class="h3-card-title">
+  
+                    Become a Member </h3>
+                  <p class="m-0" style="  color: #565656;  font: size 15px; ">Join our Leadership Council, a monthly
+                    giving program that supports oral health education, training, and outreach all year long.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 pe-0 ps-0 pt-2">
+          <div class="card mb-3 rounded-0 border-0 section-3-card-background  h-100">
+            <div class="row g-0">
+              <div class="col-2 section-3-card-icon">
+                <i class="  fas fa-hands-helping "></i>
+              </div>
+              <div class="col-10">
+                <div class="card-body">
+                  <h3 class="h3-card-title">
+  
+                    PARTNER WITH US</h3>
+                  <p class="m-0" style="  color: #565656;  font: size 15px; ">Our partners and sponsors play an integral
+                    role in supporting our programs and advancing oral health care in Costa Rica.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      <div class="row section-3-row-padding mt-0">
+        <div class="col-12 col-lg-4 ps-0 pe-0 pe-lg-3 pt-2">
+          <div class="card mb-3 rounded-0 border-0 section-3-card-background h-100">
+            <div class="row g-0 ">
+              <div class="col-2 section-3-card-icon">
+                <i class=" fas fa-calendar-alt "></i>
+              </div>
+              <div class="col-10">
+                <div class="card-body">
+                  <h3 class="h3-card-title">
+                    Support Our Work </h3>
+                  <p class="m-0" style="  color: #565656;  font: size 15px; ">100% of your donation will directly fund our
+                    programs serving women and children in need.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 ps-0 pe-0 pe-lg-3 pt-2">
+          <div class="card mb-3 rounded-0 border-0 section-3-card-background  h-100">
+            <div class="row g-0 ">
+              <div class="col-2 section-3-card-icon">
+                <i class="fas fa-people-arrows "></i>
+              </div>
+              <div class="col-10">
+                <div class="card-body">
+                  <h3 class="h3-card-title">
+  
+                    Become a Member </h3>
+                  <p class="m-0" style="  color: #565656;  font: size 15px; ">Join our Leadership Council, a monthly
+                    giving program that supports oral health education, training, and outreach all year long.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 ps-0 pe-0 pt-2">
+          <div class="card mb-3 rounded-0 border-0 section-3-card-background  h-100">
+            <div class="row g-0">
+              <div class="col-2 section-3-card-icon">
+                <i class=" fas fa-user-group"></i>
+              </div>
+              <div class="col-10">
+                <div class="card-body">
+                  <h3 class="h3-card-title">
+  
+                    PARTNER WITH US</h3>
+                  <p class="m-0" style="  color: #565656;  font: size 15px; ">Our partners and sponsors play an integral
+                    role in supporting our programs and advancing oral health care in Costa Rica.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  </section>
+  <!-- SECTİON 3 END -->
+  
+  <!-- SECTİON 4 -->
+  <section>
+    <div class="container">
+      <div class="row pb-3" style="padding-top: 6rem;">
+        <div class="col-12 col-lg-10">
+          <h5 class="blue ">OUR LATEST BLOG</h5>
+          <h3 class="f50-h3 text-muted-p">Add Impact To Your Inbox</h3>
+        </div>
+        <div class="col-12 col-lg-2">
+          <button class="btn btn-primary btn-blue">View All Blog</button>
+        </div>
+      </div>
+      <div class="row pt-4">
+        <div class="col-12  pt-3 pt-lg-0   col-lg-4 ">
+          <div class="card border-0 card-radius">
+            <div class="card-img-container">
+              <img src="{% static 'img/blogcard1.jpeg' %}" style="max-width: 100%; height: 300px; object-fit: cover; "
+                class="card-img-top img-radius " alt="...">
+              <div class="card-help-text">
+                PRESS RELEASE
+              </div>
+            </div>
+            <div class="card-body d-flex justify-content-between flex-column card-body-section-3">
+              <div class="card-title-container">
+                <h5 class="card-title f-26 blue">Unspoken Smiles Appoints Former Costa Rica Vice-Minister of Health, Dr.
+                  Alexei Carrillo, to Board of Directors</h5>
+                <p class="card-text">New York, October 2, 2023 – Leading global oral health organization, UNSPOKEN SMILES,
+                  today announced</p>
+              </div>
+              <div class="sub-title-container">
+                <hr class="mb-1">
+                <span class="m-0 f-13">UNSPOKEN SMILES | October 2, 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12  pt-3 pt-lg-0 col-lg-4 ">
+          <div class="card border-0 card-radius">
+            <img src="{% static 'img/card3.jpg' %} " style=" max-width: 100%; height: 300px; object-fit: cover; "
+              class="card-img-top img-radius" alt="...">
+            <div class="card-help-text">
+              STORY
+            </div>
+            <div class="card-body d-flex justify-content-between flex-column card-body-section-3">
+              <div class="card-title-container">
+                <h5 class="card-title f-26 blue">Unspoken Smiles Appoints Former Costa Rica Vice-Minister of Health, Dr.
+                  Alexei Carrillo, to Board of Directors</h5>
+                <p class="card-text">New York, October 2, 2023 – Leading global oral health organization, UNSPOKEN SMILES,
+                  today announced</p>
+              </div>
+              <div class="sub-title-container">
+                <hr class="mb-1">
+                <span class="m-0 f-13">UNSPOKEN SMILES | October 2, 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 pt-3 pt-lg-0 col-lg-4">
+          <div class="card border-0 card-radius">
+            <img src="{% static 'img/blogcard1.jpeg' %}" style="max-width: 100%; height: 300px; object-fit: cover; "
+              class="card-img-top img-radius" alt="...">
+            <div class="card-help-text">
+              STATEMENT
+            </div>
+            <div class="card-body d-flex justify-content-between flex-column card-body-section-3">
+              <div class="card-title-container">
+                <h5 class="card-title f-26 blue">Unspoken Smiles Appoints Former Costa Rica Vice-Minister of Health, Dr.
+                  Alexei Carrillo, to Board of Directors</h5>
+                <p class="card-text">New York, October 2, 2023 – Leading global oral health organization, UNSPOKEN SMILES,
+                  today announced</p>
+              </div>
+              <div class="sub-title-container">
+                <hr class="mb-1">
+                <span class="m-0 f-13">UNSPOKEN SMILES | October 2, 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECTİON 4 END -->
+  
+  <!-- SECTİON 5 -->
+  <section class="bg-header" style="background-image: url({% static 'img/section-5-bg.webp' %});">
+    <div class="container">
+      <div class="row section-5-bg pt-4 mt-4">
+        <div class="col-12 col-lg-8 pt-4 pb-4">
+          <h2 class="f50-h3 text-white">Help us Create Happier, Healthier Futures For All</h2>
+          <p class="text-white pt-4">Join our movement to bring quality oral health care to those in need.</p>
+        </div>
+        <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center">
+          <button class="btn btn-blue text-white" style="background-color: black;">DONATE</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECTİON 5 END -->
+
+
+  {% include "partials/_footer.html" %}
+{% endblock site-content %}
