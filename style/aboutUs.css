@@ -1,0 +1,259 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header{
+    /* width: 500px;
+    height: 300px; */
+    background: linear-gradient(rgba(62,55,255,0.8),rgba(62,55,255,0.8)),
+    url(/img/pexels-catherine-harding-wiltshire-7557701.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+.navbar-donate{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding-top: 3px;
+    
+}
+.donateButton1{
+    background: black;
+    color: #fff;
+    border: 0px solid black;
+    padding: 10px 20px 10px 20px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color .2s , outline .2s;
+    
+}
+.donateButton1:hover{
+    background-color: black;
+    outline: 2.5px solid black;
+    border: 1px solid black;
+}
+
+.donateButton2{
+    background: none;
+    color: #fff;
+    border: 2px solid white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color .2s , outline .2s;
+}
+.donateButton2:hover{
+    background-color: black;
+    outline: 2.5px solid black;
+    border: 1px solid black;
+}
+
+
+.secImg1{
+    background-image: url(/img/card3.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 550px 0 0 0;
+}
+
+.secImg2{
+    
+    background-image: url(/img/portrait-smiley-young-african-boy.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 500px 0 0 0;
+    position: relative;
+   
+}
+@keyframes neos{
+    0%{
+       opacity: 0;
+        right: 0;
+        top: 400px;
+    }
+ 
+    100%{
+        opacity: 1;
+        right: 0;
+        top: 0;
+    }
+   
+}
+.animated {
+    animation-name: neos;
+    animation-duration: 1.5s;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    animation-fill-mode: none;
+}
+
+
+.secImg3{
+    background-image: url(/img/close-up-little-girl-portrait-outdoors.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 550px 0 0 0;
+}
+
+
+.articleButton{
+    background-color: rgb(37,117,252);
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 20px 20px 20px 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+.articleButton:hover{
+    background-color: blue;
+    transition: all .4s ease;
+}
+.articleButton3{
+    background-color: white;
+    border: none;
+    color: rgb(97,102,122);
+    padding: 10px 30px;
+    border-radius: 20px 20px 20px 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    font-weight: 700;
+}
+.articleButton3:hover{
+    transition: all .4s ease;
+    color: black;
+}
+.s3p{
+    text-align: start;
+    display: flex;
+    position: relative;
+}
+
+
+.uns::first-letter{
+    
+    padding: 0rem 1.5rem;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 500%;
+    background-color: blue;
+    color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.bBorder{
+    width: 60px;
+    height: 3px;
+    background-color: #2575fc;
+}
+
+.howweworkBtn{
+    background-color: white;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 20px 20px 20px 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    margin-bottom: 30px;
+    /* margin-top: 100px; */
+    font-weight: 700;
+    background-color: blue;
+    
+    
+}
+.howweworkBtn:hover{
+    border: 2px solid blue;
+    transition:.5s;
+  
+}
+.cartPicCircle{
+    width: 70px ;
+    height: 70px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.cartPicCircle i{
+    line-height: 70px;
+    font-size: 200%;
+    color: blue;
+}
+.cartPicCircle i:hover{
+    color: black;
+}
+.card{
+    width: 32%;
+}
+.card:hover{
+    
+    
+    border: 1px solid blue;
+    color: black;
+    position: relative;
+    overflow: hidden;
+    animation-name: card;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-fill-mode: none;
+    animation-iteration-count: infinite;
+}
+@keyframes card{
+    0%{
+       
+        right: 0;
+        top: 0;
+    }
+ 
+    50%{
+        right: 0;
+        top: 10px;
+    }
+    100%{
+       
+        right: 0;
+        top: 0;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .donateButton1{
+        width: 100%;
+       
+    }
+    .donateButton2{
+        margin-top: 10px;
+        width: 100%;
+    }
+    .navbar-donate{
+        justify-content: center;
+    }
+    .navbar-donete-button{
+        width: 100%;
+    }
+    .cardheader{
+        display: block;
+        
+    }
+    .card{
+        width: 100%;
+        margin-top: 10px;
+    }
+}
