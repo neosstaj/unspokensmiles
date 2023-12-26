@@ -2,38 +2,59 @@
 {% load static %}
 
 {% block site-content %}
-<div class="container">
-    <div class="bullets">
-      <span class="active"></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="form">
-      <div class="title">
-        Register
-      </div>    
-      <div class="row visible">
-        <input type="text" placeholder="Username" />
-        <div class="fa fa-user"></div>
-        <div class="nextBtn"><i class="fa fa-chevron-right"></i></div>
-      </div>
-      <div class="row">
-        <input type="text" placeholder="Email" />
-        <div class="fa fa-envelope"></div>
-        <div class="nextBtn"><i class="fa fa-chevron-right"></i></div>
-      </div> 
-      <div class="row lastField">
-        <input type="password" placeholder="Password" />
-        <div class="fa fa-key"></div>
-        <div class="nextBtn"><i class="fa fa-chevron-right"></i></div>
-      </div>     
-    </div>
-  </div>
-  <div class="spinnerWrapper" style="display:none;">
-    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-       <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
-    </svg>
-  </div>
 
+
+<div class="container d-flex align-items-center justify-content-center flex-column" style="height: 100vh;">
+
+
+  <form action="{% url 'signup' %}" method="post">
+
+    {% for message in messages %}
+    {% if 'signup-error' in message.tags %}
+      <div class="alert alert-danger">
+        {{message}}
+      </div>
+    {% endif %}
+
+  {% endfor %}
+  
  
+
+
+
+
+
+
+    {% csrf_token %}
+    <input type="text" name="isim" placeholder="İsim">
+    <input type="text" name="soyisim" placeholder="Soyisim">
+    <input type="text" name="email" placeholder="Email">
+    <input type="text" name="password" placeholder="Şifre">
+    <button type="submit">
+      Kayıt Ol
+    </button>
+  </form>
+
+  <p class="pt-4">Hesabın varmı Giriş yap</p>
+
+
+
+  {% for message in messages %}
+  {% if 'signin-error' in message.tags %}
+    <div class="alert alert-danger">
+      {{message}}
+    </div>
+  {% endif %}
+
+
+{% endfor %}
+  <form action="{% url 'signin' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="email" placeholder="Email">
+    <input type="text" name="password" placeholder="Şifre">
+    <button type="submit">
+      Giriş yap
+    </button>
+  </form>
+</div>
 {% endblock site-content %}

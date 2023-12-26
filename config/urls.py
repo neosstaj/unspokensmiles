@@ -28,6 +28,7 @@ urlpatterns = [
     path('ok/',success,name='success'),
     path('fail/',fail,name='fail'),
     path('result/',result,name='result'),
-    path('register',register,name='register'),
+    path('signup',signup,name='signup'),
+    path('signin',signin,name='signin'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
