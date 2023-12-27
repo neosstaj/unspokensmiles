@@ -148,11 +148,12 @@
         <div class="col-12  col-lg-3">
           <div class="row btn-row">
             {% csrf_token %}
-            <div class="col-6 p-0 pe-1"> <button type="button" class="btn  btn-outline-dark w-100 donate-btn-outline"
-                id="OneTime" onclick="OneTime(this)">One
-                Time</button></div>
-            <div class="col-6 p-0 "> <button type="button" class="btn btn-light w-100 btn-color" id="Monthly"
-                onclick="Monthly(this)">Monthly</button></div>
+            <div class="col-6 p-0 pe-1"> <button name="oneTime"  type="button" id="ot" class="btn  btn-outline-dark w-100 donate-btn-outline" onclick="OneTime(this)">One
+                Time</button>
+              <input type="" class="d-none" name="oneTime" id="ot_input">
+              </div>
+            <div class="col-6 p-0 "> <button name="monthly" type="button" id="mt" class="btn btn-light w-100 btn-color" onclick="Monthly(this)">Monthly</button></div>
+            <input type="" class="d-none" name="monthly" id="mt_input">
           </div>
           <div class="row pt-1 btn-row">
             <div class="col-3  p-0 pe-1"> <button type="button" class="btn btn-donate btn-light w-100 btn-color"

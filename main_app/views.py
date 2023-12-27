@@ -7,7 +7,7 @@ from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from django.http import JsonResponse
-from user_app.models import Donations
+from user_app.models import *
 
 # Create your views here.
 API_KEY = 'sandbox-ybJixj0TVm9yQcaLZKYjN5hiAwUzFMcI'
@@ -23,15 +23,47 @@ sozlukToken = list()
 
 
 def index(request):
-    return render(request,'index.html')
+    context = dict(
+        donate = Donations.objects.all()
+    )
+    
+    return render(request,'index.html',context)
 
 def payment(request):
     price = request.POST.get('price')
     if price:
             
         context = dict()
-        user = request.user
+   
+        OneTime = request.POST.get('oneTime')
+        Monthly = request.POST.get('monthly')
+                    
+        print('onetime',OneTime)
+        print('Monthly',Monthly)
+
+        print('Monthly',len(OneTime))
+        print('Monthly',len(Monthly))
+        print('Monthly',len(Monthly)>0)
+        print('Monthly',len(OneTime)>0)
         
+
+        if len(OneTime) > 0 or len(Monthly) > 0:        
+            
+            if OneTime == '1':
+                DonationType = 1
+            else:
+                DonationType = 2
+        else:
+            messages.add_message(request,messages.ERROR,'Lütfen Bağış Tipi seçin',extra_tags='payment-error')
+            return redirect('/')
+        
+        print('onetime',OneTime)
+        print('onetime',DonationType)
+        print('Monthly',Monthly)
+        user = request.user
+        print(user)
+
+        print(type(user))
         buyer={
             'id': 'BY789222',
             'name': user.username,
@@ -47,9 +79,9 @@ def payment(request):
             'country': 'Turkey',
             'zipCode': '34732'
         }
+
         address={
             'contactName': user.username,
-            
             'city': 'Istanbul',
             'country': 'Turkey',
             'address': 'Nidakule Göztepe, Merdivenköy Mah. Bora Sok. No:1',
@@ -82,8 +114,8 @@ def payment(request):
             # 'debitCardAllowed': True
         }
 
-
-
+        print(type(user))
+        print(user)
         checkout_form_initialize = iyzipay.CheckoutFormInitialize().create(request_iyzico,options)
         page = checkout_form_initialize
 
@@ -92,8 +124,13 @@ def payment(request):
         print('*'*50)
 
         content = checkout_form_initialize.read().decode('utf-8')
+        
         print(content)
         content_yazdir = json.loads(content)
+
+       
+
+
         errorCode = content_yazdir.get('errorCode')
         errorMessage = content_yazdir.get('errorMessage')
         print('hata kodu ',errorCode,'TİPİ',type(errorCode))
@@ -103,8 +140,6 @@ def payment(request):
             messages.error(request, f'Hata Kodu: {errorCode}, Hata Mesajı: {errorMessage}', extra_tags='payment-error')
             return redirect('/')
         
-
-
 
         print(type(content))
         print('*0'*50)
@@ -133,9 +168,15 @@ def payment(request):
         return redirect('/')
 @require_http_methods(['POST'])
 @csrf_exempt
+
+
 def result(request):
     context = dict()
+    print('*'*50)
+    print(request.user)
+    print('*'*50)
     url = request.META.get('index')
+
     request_iyzico = {
         'locale':'tr',
         'conversationId':'123456789',
@@ -150,9 +191,13 @@ def result(request):
     print(sozlukToken[0],'sonuc herhaldeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
     print('*0'*50)
     sonuc = json.loads(result,object_pairs_hook=list)
+
     print('sonuc')
+    print('sonucddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
+    print(sonuc)
     print(sonuc[0][1])
     print(sonuc[5][1])
+    print(sonuc[6])
     user = request.user
     print('KULANICIIIssssI',user)
     for i in sonuc:
@@ -165,10 +210,18 @@ def result(request):
 
     if sonuc[0][1] == 'success':
         quantity = sonuc[5][1]
+        donation_type =  sonuc[6][1]
+        print(donation_type)
         user =  request.user
         print('KULANICIIII',user)
+        # AYLIK ÜYELİK TİPİ İD 1 TEK SEFERLİK 2
+        if donation_type == 1:
+            donation_type = DonationType.objects.filter(title = 'Aylık').first()
+        else:
+            donation_type = DonationType.objects.filter(title = 'Tek Seferlik').first()      
         Donations.objects.create(
                 user =user,
+                donation_type = donation_type,
                 quantity = quantity
             )
         return redirect('success')

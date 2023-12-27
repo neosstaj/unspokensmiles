@@ -7,13 +7,21 @@ clickIcon.addEventListener("click", function () {
 //   NAVBAR AÇILIŞ KAPANIŞ BUTTON BİTİŞ
 
 // HEADER DONATE KISMI BUTTON KODLAR
+onetime_input = document.getElementById('ot_input')
+mt_input = document.getElementById('mt_input')
 function Monthly(btn){
     btn.classList.add('btn-active')
-    document.getElementById('OneTime').classList.remove('btn-active')
+    mt_input.value = '1'
+    onetime = document.getElementById('ot')
+    onetime.classList.remove('btn-active')
+    onetime_input.value = ''
   }
   function OneTime(btn){
     btn.classList.add('btn-active')
-    document.getElementById('Monthly').classList.remove('btn-active')
+    onetime_input.value = '2'
+    monthly = document.getElementById('mt')
+    monthly.classList.remove('btn-active')
+    mt_input.value = ''
 }
   input_donate = document.getElementById('input-donate')
   function total25(btn){
