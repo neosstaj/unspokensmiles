@@ -4,7 +4,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
 # Create your views here.
 
-
+def test(request):
+    user = request.user
+    test = User.objects.filter(username = user.username)
+    test2 = User.objects.filter(username = user.username).first()
+    print(test)
+    print(test2)
+    return redirect('/')
 def signup(request):
     if request.method == 'POST':
         POST = request.POST

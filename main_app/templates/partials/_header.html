@@ -149,9 +149,9 @@
           <div class="row btn-row">
             {% csrf_token %}
             <div class="col-6 p-0 pe-1"> <button type="button" class="btn  btn-outline-dark w-100 donate-btn-outline"
-                id="OneTime" onclick="OneTime(this)">One
+             onclick="OneTime(this)">One
                 Time</button></div>
-            <div class="col-6 p-0 "> <button type="button" class="btn btn-light w-100 btn-color" id="Monthly"
+            <div class="col-6 p-0 "> <button type="button" class="btn btn-light w-100 btn-color" 
                 onclick="Monthly(this)">Monthly</button></div>
           </div>
           <div class="row pt-1 btn-row">
@@ -223,33 +223,3 @@
   </div>
 </header>
 <!-- HEADER END -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<script>
-  document.getElementById('DonateBtn').addEventListener('click', () => {
-    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-    input_donate = document.getElementById('input-donate').value
-    console.log(input_donate)
-    $.ajax({
-      type: "post",
-      url: "{% url 'payment'  %}",
-      dataType: 'json',
-      data: {
-        "price": input_donate,
-        csrfmiddlewaretoken: csrftoken
-      },
-      success: function (response) {
-        if (response.result) {
-          //  sweetAlert("İşlem Başarılı", response.message, "success");
-          console.log('işlem başarılır')
-        }
-        else {
-          console.log('işlem başarısız')
-        }
-      },
-    });
-
-  })
-
-
-</script>

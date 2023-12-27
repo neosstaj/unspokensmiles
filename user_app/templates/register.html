@@ -4,10 +4,8 @@
 {% block site-content %}
 
 
-<div class="container d-flex align-items-center justify-content-center flex-column" style="height: 100vh;">
-
-
-  <form action="{% url 'signup' %}" method="post">
+<div class="container">
+  <form class="registerForm" action="{% url 'signup' %}" method="post">
 
     {% for message in messages %}
     {% if 'signup-error' in message.tags %}
@@ -17,44 +15,44 @@
     {% endif %}
 
   {% endfor %}
-  
- 
-
-
-
-
-
-
     {% csrf_token %}
-    <input type="text" name="isim" placeholder="İsim">
-    <input type="text" name="soyisim" placeholder="Soyisim">
-    <input type="text" name="email" placeholder="Email">
-    <input type="text" name="password" placeholder="Şifre">
-    <button type="submit">
-      Kayıt Ol
-    </button>
+    <section class="login-panel">
+      <div class="right-side">
+        <h1>Sign Up</h1>
+        <p>Sign up and get a free pressent</p>
+        <input type="text" name="isim" id="" placeholder="Name">
+        <input type="text" name="soyisim" id="" placeholder="Surname">
+        <input type="email" name="email" id="" placeholder="Email">
+        <input type="password" name="password" id="" placeholder="Password">
+        <input type="submit" value="let's go" class="submit-btn">
+      </div>
+    </section>
   </form>
+  <div class="or">
+    <p>OR</p>
+  </div>
 
-  <p class="pt-4">Hesabın varmı Giriş yap</p>
+  <form class="registerForm ms-auto" action="{% url 'signup' %}" method="post">
 
+    {% for message in messages %}
+    {% if 'signup-error' in message.tags %}
+      <div class="alert alert-danger">
+        {{message}}
+      </div>
+    {% endif %}
 
-
-  {% for message in messages %}
-  {% if 'signin-error' in message.tags %}
-    <div class="alert alert-danger">
-      {{message}}
-    </div>
-  {% endif %}
-
-
-{% endfor %}
-  <form action="{% url 'signin' %}" method="post">
+  {% endfor %}
     {% csrf_token %}
-    <input type="text" name="email" placeholder="Email">
-    <input type="text" name="password" placeholder="Şifre">
-    <button type="submit">
-      Giriş yap
-    </button>
+    <section class="login-panel">
+      <div class="right-side ">
+        <h1>Login</h1>
+        <p>Login and continue the goodness</p>
+        <input type="text" name="isim" id="" placeholder="Name">
+        <input type="password" name="password" id="" placeholder="Password">
+        <input type="submit" value="let's go" class="submit-btn">
+      </div>
+    </section>
   </form>
 </div>
+  
 {% endblock site-content %}

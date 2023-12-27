@@ -9,11 +9,11 @@ clickIcon.addEventListener("click", function () {
 // HEADER DONATE KISMI BUTTON KODLAR
 function Monthly(btn){
     btn.classList.add('btn-active')
-    document.getElementById('OneTime').classList.remove('btn-active')
+    document.getElementById('OneTimeId').classList.remove('btn-active')
   }
   function OneTime(btn){
     btn.classList.add('btn-active')
-    document.getElementById('Monthly').classList.remove('btn-active')
+    document.getElementById('MonthlyId').classList.remove('btn-active')
 }
   input_donate = document.getElementById('input-donate')
   function total25(btn){
