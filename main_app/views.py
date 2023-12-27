@@ -49,6 +49,7 @@ def payment(request):
         }
         address={
             'contactName': user.username,
+            
             'city': 'Istanbul',
             'country': 'Turkey',
             'address': 'Nidakule Göztepe, Merdivenköy Mah. Bora Sok. No:1',
