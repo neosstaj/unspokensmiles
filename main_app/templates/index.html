@@ -3,14 +3,35 @@
 
 {% block site-content %}
 {% include "partials/_header.html" %}
-<a href="{%  url 'payment' %}">iyzico ile öde</a>
-<p>
+<!-- DONATE -->
 
-  {% for message  in  messages %}
-    {{message}}
-    
-  {% endfor %}
-</p>
+<section>
+  <div class="container">
+    <div class="row " style="border: 1px solid black;   background-color: #3E37FF;">
+      <div class="col-4" style="border: 1px solid black;">Destekçi</div>
+      <div class="col-4" style="border: 1px solid black;">Desteği</div>
+      <div class="col-4" style="border: 1px solid black;">Destek Tipi</div>
+    </div>
+    {% for i in donate  %}
+    <div class="row " style="background-color: #3E37FF;">
+     <div class="col-4" style="border: 1px solid black;">
+      
+      <p>{{i.user}}</p>
+     </div>
+     <div class="col-4" style="border: 1px solid black;">
+      <p>{{i.quantity}}TL</p>
+     </div>
+     <div class="col-4" style="border: 1px solid black;">
+      <p>{{i.donation_type}}</p>
+     </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<!-- DONATE END -->
+
+
+
 <!-- SECTİON 1  -->
 <section style="margin-bottom: 95px;">
     <div class="container">
