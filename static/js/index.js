@@ -11,25 +11,17 @@ onetime_input = document.getElementById('ot_input')
 mt_input = document.getElementById('mt_input')
 function Monthly(btn){
     btn.classList.add('btn-active')
-<<<<<<< HEAD
-    document.getElementById('OneTimeId').classList.remove('btn-active')
-  }
-  function OneTime(btn){
-    btn.classList.add('btn-active')
-    document.getElementById('MonthlyId').classList.remove('btn-active')
-=======
-    mt_input.value = '1'
+    mt_input.value = '2'
     onetime = document.getElementById('ot')
     onetime.classList.remove('btn-active')
     onetime_input.value = ''
   }
   function OneTime(btn){
     btn.classList.add('btn-active')
-    onetime_input.value = '2'
+    onetime_input.value = '1'
     monthly = document.getElementById('mt')
     monthly.classList.remove('btn-active')
     mt_input.value = ''
->>>>>>> e06dd3d4560e14c86127fbec860e38156f41d91a
 }
   input_donate = document.getElementById('input-donate')
   function total25(btn){

@@ -2,15 +2,11 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
+from user_app.models import blog as BlogModels
 # Create your views here.
 
-def test(request):
-    user = request.user
-    test = User.objects.filter(username = user.username)
-    test2 = User.objects.filter(username = user.username).first()
-    print(test)
-    print(test2)
-    return redirect('/')
+
+
 def signup(request):
     if request.method == 'POST':
         POST = request.POST
@@ -62,3 +58,32 @@ def signin(request):
             return redirect('signup')
     else:
         return render(request,'register.html')
+    
+
+
+def aboutus(request):
+    return render(request,'aboutus.html')
+
+def blog(request):
+    blog = BlogModels.objects.filter(active = True)
+    context = dict(
+        blog = blog
+    )
+    return render(request,'blog.html',context)
+def blogDetail(request,id):
+    blog = BlogModels.objects.filter(id = id,active = True).first()
+    blogall = BlogModels.objects.filter(active = True)
+    context = dict(
+        blog = blog,
+        blogall= blogall,
+    )
+    return render(request,'blogdetail.html',context)
+
+def donate(request):
+    return render(request,'donate.html')
+def involved(request):
+    return render(request,'involved.html')
+def ourwork(request):
+    return render(request,'ourwork.html')
+def whyoralhealt(request):
+    return render(request,'whyoralhealt.html')

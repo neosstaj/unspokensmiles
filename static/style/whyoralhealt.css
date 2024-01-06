@@ -1,0 +1,560 @@
+.container{
+    margin-top: 100px;
+}
+
+.contentup{
+    display: flex;
+}
+
+.group1{
+    margin-top: 60px;
+    max-width: 60%;
+}
+
+.video iframe{
+    border-radius: 1.5%;
+}
+
+.rightcontent1 h1{
+    margin-left: 0;
+    font-size: 50px;
+    color: #3E37FF;
+}
+
+.rightcontent1 h2{
+    margin-top: 3rem;
+    margin-left: 0;
+    font-size: 35px;
+    color: #3E37FF;
+}
+
+.rightcontent1 h5{
+    margin-top: 2rem;
+    margin-left: 0;
+    font-weight: 600;
+}
+
+.rightcontent1 h6{
+    margin-top: 1rem;
+    margin-left: 0;
+}
+
+.carousel{
+    height: 350px;
+    font-size: xx-large;
+}
+
+.carousel img{
+    max-height: 100%;
+    margin-top: 50px;
+    width: 350px;
+    height: 200px;
+    border-radius: 5%;
+}
+
+@media screen and (max-width: 992px) and (min-width: 767px) {
+
+    .carousel li{
+        margin-left: 50px;
+    }
+
+    .carousel img {
+        width: 350px;
+        height: 30vh;
+    }
+
+}
+
+@media screen and (max-width: 767px) and (min-width: 470px) {
+
+    .carousel li{
+        width: 300px;
+        margin-left: 50px;
+    }
+
+    .carousel img{
+        width: 250px;
+        height: 20vh;
+    }
+}
+
+@media screen and (max-width: 470px) and (min-width: 320px) {
+
+    .carousel li{
+        margin-left: 50px;
+    }
+
+    .carousel img {
+        width: 210px;
+        height: 120px;
+    }
+
+
+}
+
+@media screen and (max-width: 380px) and (min-width: 0px) {
+
+    .carousel li{
+        margin-left: 50px;
+    }
+
+    .carousel img {
+        width: 170px;
+        height: 110px;
+    }
+
+}
+
+
+.rightcontent2 h1{
+    color: #3E37FF;
+}
+
+.rc2-group{
+    display: flex;
+}
+
+.rc2-group p {
+    font-weight: 700;
+    color: #3E37FF;
+}
+
+.icon-p svg{
+    margin: auto;
+    color: #3E37FF;
+}
+
+.icon-p {
+    display: flex;
+}
+
+.splide__arrows{
+    display: none;
+}
+
+.group2{
+    margin-left: 30px;
+}
+
+.groupbox1{
+    background-color: #F8FAFF;
+    width: 90%;
+    height: 500px;
+    margin-top: 5rem;
+    margin-bottom: 3.5rem;
+    border-radius: 5%;
+    border-bottom: 4px solid #3E37FF;
+}
+
+.gb1-in{
+    margin: auto;
+    width: 70%;
+}
+
+.groupbox1 h4{
+    margin-bottom: 20px;
+    padding-top: 10px;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+    color: #3E37FF;
+}
+
+.groupbox1 button{
+    margin-top: 20px;
+    background-color: #3E37FF;
+    width: 80%;
+    height: 50px;
+    margin-left: 10%;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #3E37FF;
+}
+
+.groupbox1 button a{
+text-decoration: none;  
+}
+
+.groupbox2{
+    width: 80%;
+    height: 40vh;
+    border-radius: 7%;
+    padding-top: 20px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.groupbox2 h1{
+    width: 80%;
+    color: white;
+    text-align: center;
+    margin-left: 10%;
+    margin-bottom: 25px;
+}
+
+.gb2-buttons{
+    margin-left: 5%;
+    height: 200px;
+}
+
+.gb2-buttons button {
+    background-color: black;
+    border: 1px solid black;
+    height: 50px;
+}
+
+.gb2-buttons button a{
+    font-weight: 600;
+    text-decoration: none;  
+    }
+
+.contentmid{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.cm-right{
+    flex: 60%;
+}
+
+.cm-right h1{
+    font-size: 60px;
+    color: #3E37FF;
+    margin-bottom: 30px;
+}
+
+.cm-right p{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.cm-right button{
+    margin-top: 60px;
+}
+
+.cm-left{
+    margin-top: 30px;
+}
+
+.cm-l-box1{
+    background-size: 100%;
+    height: 40px;
+    margin-bottom: 105px;
+}
+
+.cm-l-box2{
+    background-size: 100%;  
+    height: 80px;
+    margin-bottom: 105px;
+    display: flex;
+}
+
+.cm-l-box3{
+    background-size: 100%;
+    height: 100px;
+    display: flex;
+}
+
+.cm-l-box1 p{
+    color: white;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.cm-l-box2 p{
+    color: white;
+    width: 94%;
+    margin: auto;
+    /* padding-left: 90px; */
+    text-align: center;
+}
+
+.cm-l-box3 p{
+    color: white;
+    margin: auto;
+    /* padding-left: 60px; */
+    padding-top: 10px;
+    text-align: center;
+}
+
+.cm-left span{
+    color: white;
+    margin: auto;
+}
+
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+
+    .contentup{
+        display: block;
+    }
+    
+    .group1{
+        max-width:100%;
+    }
+
+    .video iframe{
+        width: 100%;
+        height: 45vh;
+    }
+
+    .groupbox2{
+        height: 30vh;
+        border-radius: 5%;
+        padding-top: 20px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .gb2-buttons{
+        display: block;
+    }
+
+    .cm-left{
+        flex: 60%;
+    }
+
+    .cm-l-box1{
+        height: 5vh;
+        width: 85%;
+    }
+
+    .cm-l-box2{
+        height: 9vh;
+        width: 85%;
+    }
+    
+    .cm-l-box3{
+        height: 11vh;
+        width: 85%;
+    }
+    .cm-l-box3 p{
+        padding-top: 0;
+        
+    }
+
+    }
+
+
+    .contentdown{
+        display: flex;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-position: 100% 55%;
+        background-size: 100%;
+    }
+    
+    .cd-right{
+        width: 85%;
+    }
+    
+    .cd-right-in{
+        width: 80%;
+        color: white;
+        padding: 15px;
+    }
+    
+    .cd-right-in h1{
+        font-size: 60px;
+        margin-bottom: 25px
+    }
+    
+    .cd-left{
+        margin: auto;
+        margin-left: 20px;
+    }
+    
+    .cd-left button{
+        width: 150%;
+        color: white;
+        border: 2px solid black;
+    }
+    
+    @media screen and (min-width: 0px) and (max-width: 1024px) {
+        .contentup{
+            display: block;
+        }
+    }
+    
+    @media screen and (min-width: 770px) and (max-width: 1024px) {
+        .cd-left {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+    
+        .video iframe{
+            height: 65vh;
+        }
+    
+        .contentdown{
+            height: 360px;
+        }
+    
+        .cd-right h1{
+            font-size: 50px;
+        }
+    
+        .cd-left{
+            padding-right: 20px;
+        }
+    
+        .cd-left button{
+            margin-right: 30px;
+            width: 100%;
+        }
+    }
+    
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+    
+        .video iframe{
+            width: 100%;
+            height: 40vh;
+        }
+    
+        .group1{
+            max-width: 100%;
+        }
+
+        .group2{
+            margin-left: 0;
+        }
+    
+        .groupbox1{
+            width: 100%;
+        }
+    
+        .groupbox2{
+            width: 100%;
+            height: 100%;
+        }
+
+        .contentmid{
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .cm-right{
+            margin-bottom: 60px;
+        }
+
+        .cm-right button{
+            margin-top: 5px;
+        }
+
+        .cm-l-box1{
+            height: 6vh;
+        }
+
+        .cm-l-box3{
+            height: 12vh;
+        }
+
+        .cm-l-box1 p {
+            padding-left: 0px;
+            padding-top: 0px;
+        }
+
+        .cm-l-box2 p {
+            padding-left: 0px;
+            padding-top: 0px;
+        }
+
+        .cm-l-box3 p {
+            padding-left: 0px;
+            padding-top: 0px;
+        }
+    
+        .contentdown{
+            display: block;
+        }
+    
+        .cd-right{
+            margin: auto;
+        }
+
+        .cd-left{
+            margin-top: 1%;
+            margin-left: 17%;
+        }
+
+        .cd-right-in{
+            width: 100%;
+            margin-left: 10%;
+        }
+    
+        .cd-right h1{
+            font-size: 30px;
+        }
+    
+        .cd-left button{
+            width: 150px;
+            margin-left: 25%;
+        }
+    
+    }
+    
+    @media screen and (min-width: 0px) and (max-width: 375px) {
+
+        .contentdown{
+            height: 100%;
+        }
+
+        .video iframe{
+            height: 24vh;
+        }
+
+        .rc2-group {
+            display: block;
+        }
+    
+        .cd-right h1{
+            font-size: 20px;
+        }
+    
+        .cd-left button{
+            margin-bottom: 30px;
+            width: 50%;
+            height: 7vh;
+        }
+    
+    }
+
+
+    @media screen and (max-width: 320px) and (min-width: 0) {
+
+        .rightcontent1{
+            text-align: center;
+        }
+        .rightcontent2{
+            text-align: center;
+        }
+
+        .video iframe {
+            height: 20vh;
+        }
+
+        .groupbox1{
+            height: 567px;
+        }
+
+        .gb1-in button{
+            margin-top: 0;
+        }
+
+        .contentdown{
+            height: 30vh;
+            background-size: 100% 100%;
+        }
+
+        .cd-right-in {
+            padding-bottom: 15px;
+        }
+
+        .cd-left button {
+            width: 45%;
+            height: 6vh;
+        }
+        
+    }

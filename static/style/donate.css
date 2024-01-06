@@ -135,7 +135,7 @@
     height: 80vh;
     background: 
         linear-gradient(rgba(62, 55, 255, 0.8), rgba(062, 55, 255, 0.8)),
-        url(/img/pexels-shelagh-murphy-2883380.jpg);
+        url(static/img/pexels-shelagh-murphy-2883380.jpg);
     background-position: center;
     background-size: cover;
     padding-left: 0;
@@ -462,10 +462,10 @@
 }
 
 .accordion-button::after{
-    background-image: url(/img/down-arrow\(black\).png);
+    background-image: url(static/img/down-arrow\(black\).png);
 }
 .accordion-button:not(.collapsed)::after{
-    background-image: url(/img/down-arrow.png);
+    background-image: url(static/img/down-arrow.png);
 }
 .accordion-button:not(.collapsed){
     box-shadow: none;
@@ -503,7 +503,7 @@
 .endContent{
     background: 
         linear-gradient(rgba(62, 55, 255, 0.8), rgba(062, 55, 255, 0.8)),
-        url(/img/pexels-shelagh-murphy-2883380.jpg);
+        url(static/img/pexels-shelagh-murphy-2883380.jpg);
     background-position: center;
     background-size: cover;
 }

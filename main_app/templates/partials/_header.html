@@ -34,12 +34,16 @@
           <!-- MENU LİSTESİ -->
           <div class="navbar-menu-list">
             <ul class="navbarList">
-              <li class="navbar-dropdown">
-                <button class="dropdown-button">WHY ORAL HEALTH?</button>
+              <li class="navbar-dropdown" >
+                <button class="dropdown-button">
+                <a class="text-decoration-none text-white" href="{% url 'whyoralhealt' %}"></a>  WHY ORAL HEALTH?
+                </button>
               </li>
               <li class="navbar-dropdown">
                 <div class="navbar-dropdown-button">
-                  <button class="dropdown-button">OUR WORK</button>
+                  <button class="dropdown-button">
+                    <a class="text-decoration-none text-white" href="{% url 'ourwork' %}">OUR WORK</a> 
+                  </button>
                   <span class="navbar-icon">
                     <i class="fa-solid fa-caret-down"></i>
                   </span>
@@ -61,7 +65,9 @@
               </li>
               <li class="navbar-dropdown">
                 <div class="navbar-dropdown-button">
-                  <button class="dropdown-button">GET INVOLVED</button>
+                  <button class="dropdown-button">
+                    <a class="text-decoration-none text-white" href="{% url 'involved' %}">     GET INVOLVED</a>   
+                  </button>
                   <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
                 </div>
                 <!-- DROPDOWN MENU -->
@@ -87,7 +93,9 @@
               </li>
               <li class="navbar-dropdown">
                 <div class="navbar-dropdown-button">
-                  <button class="dropdown-button">ABOUT US</button>
+                  <button class="dropdown-button">
+                    <a class="text-decoration-none text-white" href="{% url 'aboutus' %}">ABOUT US</a>                     
+                  </button>
                   <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
                 </div>
                 <!-- DROPDOWN MENU -->
@@ -148,20 +156,12 @@
         <div class="col-12  col-lg-3">
           <div class="row btn-row">
             {% csrf_token %}
-<<<<<<< HEAD
-            <div class="col-6 p-0 pe-1"> <button type="button" class="btn  btn-outline-dark w-100 donate-btn-outline"
-             onclick="OneTime(this)">One
-                Time</button></div>
-            <div class="col-6 p-0 "> <button type="button" class="btn btn-light w-100 btn-color" 
-                onclick="Monthly(this)">Monthly</button></div>
-=======
             <div class="col-6 p-0 pe-1"> <button name="oneTime"  type="button" id="ot" class="btn  btn-outline-dark w-100 donate-btn-outline" onclick="OneTime(this)">One
                 Time</button>
               <input type="" class="d-none" name="oneTime" id="ot_input">
               </div>
             <div class="col-6 p-0 "> <button name="monthly" type="button" id="mt" class="btn btn-light w-100 btn-color" onclick="Monthly(this)">Monthly</button></div>
             <input type="" class="d-none" name="monthly" id="mt_input">
->>>>>>> e06dd3d4560e14c86127fbec860e38156f41d91a
           </div>
           <div class="row pt-1 btn-row">
             <div class="col-3  p-0 pe-1"> <button type="button" class="btn btn-donate btn-light w-100 btn-color"

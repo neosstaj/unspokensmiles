@@ -7,9 +7,11 @@ from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from django.http import JsonResponse
-from user_app.models import *
+from user_app.models import Donations,DonationType
+from user_app.models import blog as BlogModels
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+
 API_KEY = 'sandbox-ybJixj0TVm9yQcaLZKYjN5hiAwUzFMcI'
 SECRET_KEY = 'sandbox-nW30QdMCvJ5HKsBoQXGH288DcJ4ZoaIV'
 BASE_URL = 'sandbox-api.iyzipay.com'
@@ -24,23 +26,23 @@ sozlukToken = list()
 
 def index(request):
     context = dict(
-        donate = Donations.objects.all()
+        donate = Donations.objects.all(),
+        blog = BlogModels.objects.filter(active = True)
     )
     
     return render(request,'index.html',context)
 
+
+@login_required(login_url='/signup') 
 def payment(request):
     price = request.POST.get('price')
-    if price:
-            
+    if price:   
+
         context = dict()
-   
         OneTime = request.POST.get('oneTime')
         Monthly = request.POST.get('monthly')
-                    
         print('onetime',OneTime)
         print('Monthly',Monthly)
-
         print('Monthly',len(OneTime))
         print('Monthly',len(Monthly))
         print('Monthly',len(Monthly)>0)
@@ -162,14 +164,17 @@ def payment(request):
 
 
 
-        return HttpResponse(json_content['checkoutFormContent'])
+        response = HttpResponse(json_content['checkoutFormContent'])
+        response.set_cookie('donationtype',DonationType)
+        return response
+        
     else:
         messages.add_message(request,messages.ERROR,'Lütfen Miktar giriniz',extra_tags='payment-error')
         return redirect('/')
 @require_http_methods(['POST'])
 @csrf_exempt
 
-
+@login_required(login_url='/signup') 
 def result(request):
     context = dict()
     print('*'*50)
@@ -210,15 +215,15 @@ def result(request):
 
     if sonuc[0][1] == 'success':
         quantity = sonuc[5][1]
-        donation_type =  sonuc[6][1]
-        print(donation_type)
+        donation_type =  request.COOKIES.get('donationtype')
+        print('donate tipiğ',donation_type)
         user =  request.user
         print('KULANICIIII',user)
-        # AYLIK ÜYELİK TİPİ İD 1 TEK SEFERLİK 2
-        if donation_type == 1:
-            donation_type = DonationType.objects.filter(title = 'Aylık').first()
+        # AYLIK ÜYELİK TİPİ İD 2 TEK SEFERLİK 1
+        if donation_type == '1':
+            donation_type = DonationType.objects.filter(title = 'Tek Seferlik').first()
         else:
-            donation_type = DonationType.objects.filter(title = 'Tek Seferlik').first()      
+            donation_type = DonationType.objects.filter(title = 'Aylık').first()      
         Donations.objects.create(
                 user =user,
                 donation_type = donation_type,
@@ -230,6 +235,7 @@ def result(request):
         return redirect('fail')
 
     return HttpResponse(url)
+
 
 def success(request):
     messages.add_message(request, messages.INFO, "Bağışınız İçin Teşekkür Ederiz",extra_tags='py-success')

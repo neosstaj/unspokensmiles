@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'main_app',
     'iyzipay',
     'user_app',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 ROOT_URLCONF = 'config.urls'
 

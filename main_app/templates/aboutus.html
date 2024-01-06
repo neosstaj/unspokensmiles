@@ -1,0 +1,332 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block css-link %}
+<link rel="stylesheet" href="{% static 'style/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'style/aboutUs.css' %}">
+{% endblock css-link %}
+{% block site-content %}
+  
+<header class="bg-header">
+
+    <div class="container">
+      <div class="navbar-container">
+        <div class="row navbar-row">
+          <!-- NAVBAR LOGO IMAGE -->
+          <div class="col-lg-3 navbar-logo">
+            <div class="navbar-logo-image">
+              <a href="#">
+                <img src="{% static 'img/logo.png'%}" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-6 navbar-menu">
+            <!-- HAMBURGER ICON(RESPONSIVE GORUNUM İLK BASTA DİSPLAY NONE) -->
+            <div class="navbar-hamburger-icon">
+              <span class="hamburger-icon">
+                <i class="fa-solid fa-bars"></i>
+              </span>
+            </div>
+            <!-- MENU LİSTESİ -->
+            <div class="navbar-menu-list">
+              <ul class="navbarList">
+                <li class="navbar-dropdown" >
+                  <button class="dropdown-button">
+                  <a class="text-decoration-none text-white" href="{% url 'whyoralhealt' %}"></a>  WHY ORAL HEALTH?
+                  </button>
+                </li>
+                <li class="navbar-dropdown">
+                  <div class="navbar-dropdown-button">
+                    <button class="dropdown-button">
+                      <a class="text-decoration-none text-white" href="{% url 'ourwork' %}">OUR WORK</a> 
+                    </button>
+                    <span class="navbar-icon">
+                      <i class="fa-solid fa-caret-down"></i>
+                    </span>
+                  </div>
+                  <!-- DROPDOWN MENU -->
+                  <div class="navbar-dropdown-hover">
+                    <ul class="dropdown-hover-list">
+                      <li class="dropdown-link">
+                        <a href="#">DENTAL CLINIC</a>
+                      </li>
+                      <li class="dropdown-link">
+                        <a href="#">FELLOWSHIP</a>
+                      </li>
+                      <li class="dropdown-link">
+                        <a href="#">ZERO CAVITY INITIATIVE</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="navbar-dropdown">
+                  <div class="navbar-dropdown-button">
+                    <button class="dropdown-button">
+                      <a class="text-decoration-none text-white" href="{% url 'involved' %}">     GET INVOLVED</a>   
+                    </button>
+                    <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
+                  </div>
+                  <!-- DROPDOWN MENU -->
+                  <div class="navbar-dropdown-hover">
+                    <ul class="dropdown-hover-list">
+                      <li class="dropdown-link">
+                        <a href="#">PARTNERSHIP</a>
+                      </li>
+                      <li class="dropdown-link">
+                        <a href="#">LEADERSHIP COUNCIL</a>
+                      </li>
+                      <li class="dropdown-link">
+                        <a href="#">TAKE THE PLEDGE</a>
+                      </li>
+                      <li class="dropdown-link">
+                        <a href="#">VOLUNTEER</a>
+                      </li>
+                      <li class="dropdown-link">
+                        <a href="#">THE GLOBAL GOALS</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="navbar-dropdown">
+                  <div class="navbar-dropdown-button">
+                    <button class="dropdown-button">
+                      <a class="text-decoration-none text-white" href="{% url 'aboutus' %}">ABOUT US</a>                     
+                    </button>
+                    <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
+                  </div>
+                  <!-- DROPDOWN MENU -->
+                  <div class="navbar-dropdown-hover">
+                    <ul class="dropdown-hover-list">
+                      <li class="dropdown-link">
+                        <a href="#">LEADERSHIP TEAM</a>
+                      </li>
+                      <li class="dropdown-link">
+                        <a href="#">TRANSPARENCY</a>
+                      </li>
+                      <li class="dropdown-link">
+                        <a href="#">CAREERS</a>
+                      </li>
+                      <li class="dropdown-link">
+                        <a href="#">BLOG</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- NAVBAR DONATE BUTTON -->
+          <div class="col-6 col-lg-3 navbar-donate">
+            <div class="navbar-donete-button">
+              <button class="donateButton">DONATE NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <br><br><br><br><br>
+        <div class="row">
+            <div class="col-12 col-lg-7 text-center text-lg-start">
+                <h1 style="font-size: 500%; color: white;">Change the world with us.</h1>
+            </div>
+            <div class="column-gap-5"></div>
+            <br>
+            <div style="color: white;font-size: 120%;" class="col-12 col-lg-7 text-center text-lg-start">Our vision is a dental health worker within reach of everyone, everywhere.</div>
+            <div class="column-gap-5"></div>
+            <div class="col-12 col-lg-7 navbar-donate ">
+                
+                    <div class="navbar-donete-button d-block d-lg-flex mt-0 mt-lg-4">
+                      <button class="donateButton1">DONATE NOW</button>
+                      <button class="donateButton2 ms-0 ms-lg-3">Take Action</button>
+                    </div>
+            </div>
+            <div class="column-gap-5"></div>
+        </div>
+        <br><br><br><br><br>
+      </section>
+
+    </div>
+</header>
+<section>
+    <div class="space m-5"></div>
+    <div class="container">
+        <div class="row">
+        <div class="col-12 col-lg-7 m-auto text-center">
+            <h3 style="font-weight: 400; font-size: 250%; color: rgb(62,55,255);">We envision a future where children can enjoy healthy, happy smiles, free of oral disease and related health complications.</h3>
+        </div>
+        <div style="font-size: 300%;" class="dots text-center">.</div><!-- TEKRAR BAK -->
+        <div class="col-12 col-lg-7 m-auto text-center">We create access to quality dental education and disease prevention programs for children, as well as career training in dentistry for women, to promote better oral health outcomes and economic development in the world’s most disadvantaged regions.</div>
+    </div>
+    </div>    
+<br><br><br><br>
+</section>
+
+<section>
+    <div class="container">
+        <div  class="row">
+
+            <div class="col-12 col-lg-6 secImg1"></div>
+            <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 m-auto">
+                    <p class="pt-3 pt-lg-0" style="color: blue; margin: 0;padding: 0;">OUR HISTORY</p>
+                    <h1>From Tragedy To Global Activism</h1>
+                    <p style="padding-top: 30px;">Following the tragic 2010 earthquake in Haiti, Jean Paul Laurent, then a student at NYU’s School of Dentistry, returned to his native country to provide free dental care and supplies to a camp. While there, he was moved by the unwavering smiles of young children as they played amid the rubble and devastation around them–many of whom were suffering from severe tooth decay. Looking at these children, Laurent vowed to preserve the quality and health of their smiles and those of all disadvantaged children around the world–and the Unspoken Smiles  was born. Since our founding, we have grown from a pilot project in Haiti into a global movement, serving over 10,000 children in 9 countries across 4 continents.</p>
+                    <button  class="articleButton ">Read More</button>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <div class="col-12 col-lg-6 m-auto">
+                  <p class="pt-3 pt-lg-0" style="color: blue;margin: 0;padding:100px 0 0 0;">WHO WE ARE</p>
+                  <h1>Learn about Unspoken Smiles’ founder, leadership team, and global advocates.</h1>
+                  <p style="padding-top: 30px;">Our members, volunteer leaders, and staff work tirelessly for change every day. Meet the people behind the work.</p>
+                  <button class="articleButton">Read More</button>
+              </div>
+          </div>
+            <div class="col-12 col-lg-6 secImg2"></div>
+         
+
+            <div class="col-12 col-lg-6 mt-5 mt-lg-5 secImg3"></div>
+            <div style="background-color: rgb(62,55,255); color: white;" class="col-12 col-lg-6 mt-0 mt-lg-5">
+              <div  class="col-12 col-lg-6 m-auto">
+                  <p style="margin: 0;padding:100px 0 0 0;">STRATEGIC FRAMEWORK 2023-2030</p>
+                  <h1>A proposal of what we want to achieve by 2030.</h1>
+                  <p style="padding-top: 30px;">The burden of <a style="color: rgb(18,147,255);" class="text-decoration-none" href="">#OralDisease</a>  is at an alarming all-time high and requires urgent action. We are enthusiastic to join the battle upward and forward toward a better and healthier future, beginning with the assurance that every child in the American Hemisphere has access to a healthy, and meaningful smile.</p>
+                  <button class="articleButton3">Read More</button>
+              </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+<section>
+  <div class="container">
+    <div style="padding-top: 150px;" class="row justify-content-center">
+      <div class="column-gap-0 column-gap-lg-3"></div>
+      <div class="col-12 col-lg-6 text-center">
+      <p style="font-size: 400%;color: blue;line-height: 70px;">OUR VISION FOR CHANGE</p>
+      <p class="bBorder m-auto mt-3 mb-3"></p>
+      <p>According to a new Global Oral Health Status Report published on november 21, 2022 by the World Health Organization (WHO), it is estimated that oral diseases affect more than 530 million children worldwide, directly affecting their school attendance, social interaction, and overall health. Oftentimes, these oral diseases are completely avoidable, such as untreated tooth decay, but are left overlooked, as oral disease is considered the fourth most expensive disease to treat.</p>
+
+      <div class="d-flex s3p">
+        <p  class="uns">
+          Unspoken Smiles recognizes the lack of access to oral healthcare as one of the most under-publicized, and simultaneously one of the most detrimental, factors limiting the full potential of children in low-income areas. With a focus only on preventative care, we will installed community dental clinics throughout the Americas that will provide critical primary care services at substantial savings creating unparalleled access to preventative care.
+        </p>
+      </div>
+
+      </div>
+      <div class="column-gap-0 column-gap-lg-3"></div>
+    </div>
+  </div>
+</section>
+<br><br><br><br>
+<section>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-0 col-lg-1"></div>
+      <div class="col-12 col-lg-10">
+        <h3 style="font-weight: 400; font-size: 200%; color: rgb(62,55,255);">HOW WE WORK</h3>
+        <p class="bBorder mt-3 mb-3"></p>
+          <p>  What further provides Unspoken Smiles with a strong competitive advantage is our multi-prong approach that includes education programs that will be effective in driving a grass roots behavior change and healthy oral habits for a lifetime. In addition, Unspoken Smiles will also provide attractive fellowships for mid-career level training creating economic opportunities and tackling root causes such as women empowerment and economic development.</p>
+        <button class="howweworkBtn">Read More</button>
+      </div>
+      <div class="col-0 col-lg-1"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="cardheader col-10 d-block d-lg-flex justify-content-between">
+
+        <div class="card " >
+         <div class="cartPic">
+          <div class="cartPicCircle ms-auto me-auto">
+            <i class="bi bi-house-door-fill "></i>
+          </div>
+         </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">STRENGTHEN LOCAL SCHOOLS</h5>
+            <p class="card-text text-center">We partner with individuals, organizations, government agencies, academic institutions, as well as other entities to implement strategies that will promote dental health and minimize tooth decay in children in the Americas
+
+            </p>
+          </div>
+         
+          <div class="card-body text-center">
+            <a href="#" class="card-link">Read More</a>
+            
+          </div>
+        </div>
+
+        <div class="card  " >
+          <div class="cartPic">
+           <div class="cartPicCircle ms-auto me-auto">
+            <i class="bi bi-person-fill"></i>
+           </div>
+          </div>
+           <div class="card-body">
+             <h5 class="card-title text-center">TRAIN DENTAL HEALTH WORKERS</h5>
+             <p class="card-text text-center">We are recruiting the largest army of community dental professionals dedicated to solving the oral health crisis in the Americas by 2030. As a result, community and frontline health workers acquire new knowledge and skills and apply them in the delivery of primary health services within their own community.</p>
+           </div>
+          
+           <div class="card-body text-center">
+             <a href="#" class="card-link">Read More</a>
+             
+           </div>
+         </div>
+
+         <div class="card  " >
+          <div class="cartPic">
+           <div class="cartPicCircle ms-auto me-auto">
+            <i class="bi bi-calendar-plus-fill"></i>
+           </div>
+          </div>
+           <div class="card-body">
+             <h5 class="card-title text-center">DELIVER DENTAL CARE</h5>
+             <p class="card-text text-center">We are building the world's first fully preventative dental clinic. With a tax deductible contribution of only $17/month or $204/year, we will extend primary dental care services to the Americas most remote communities by designing, growing, and sustaining national networks of community and frontline dental health workers.</p>
+           </div>
+          
+           <div class="card-body text-center">
+             <a href="#" class="card-link">Read More</a>
+             
+           </div>
+         </div>
+
+      </div>
+      <div class="col-1"></div>
+    </div>
+  </div>
+</section>
+
+     <!-- FONT AWESOME ICON CDN-->
+     <script src="https://kit.fontawesome.com/a09e04a105.js" crossorigin="anonymous"></script>
+
+     <!-- BOOTSTRAP JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- HAMBURGER ICON CLICK TANIMLANMASI(RESPONSIVE TASARIMDA DROPDOWN MENULERI AÇIYOR) -->
+    <script>
+        const clickIcon=document.querySelector(".hamburger-icon")
+        const navbarList=document.querySelector(".navbar-menu-list")
+        clickIcon.addEventListener("click",function(){
+            navbarList.classList.toggle("responsive")
+        })
+
+
+        window.addEventListener('scroll', function () {
+        var scrollHeight = window.scrollY;
+
+       
+        if (scrollHeight >= 500) {
+            document.querySelector('.secImg2').classList.add('animated');
+        } else {
+            document.querySelector('.secImg2').classList.remove('animated');
+        }
+    });
+    </script>
+
+{% endblock site-content %}

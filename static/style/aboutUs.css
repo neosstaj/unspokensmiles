@@ -8,7 +8,7 @@ header{
     /* width: 500px;
     height: 300px; */
     background: linear-gradient(rgba(62,55,255,0.8),rgba(62,55,255,0.8)),
-    url(/img/pexels-catherine-harding-wiltshire-7557701.jpg);
+    url(/static/img/pexels-catherine-harding-wiltshire-7557701.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -57,7 +57,7 @@ header{
 
 
 .secImg1{
-    background-image: url(/img/card3.jpg);
+    background-image: url(/static/img/card3.jpg);
     background-size: cover;
     background-position: center;
     padding: 550px 0 0 0;
@@ -65,7 +65,7 @@ header{
 
 .secImg2{
     
-    background-image: url(/img/portrait-smiley-young-african-boy.jpg);
+    background-image: url(/static/img/portrait-smiley-young-african-boy.jpg);
     background-size: cover;
     background-position: center;
     padding: 500px 0 0 0;
@@ -97,7 +97,7 @@ header{
 
 
 .secImg3{
-    background-image: url(/img/close-up-little-girl-portrait-outdoors.jpg);
+    background-image: url(/static/img/close-up-little-girl-portrait-outdoors.jpg);
     background-size: cover;
     background-position: center;
     padding: 550px 0 0 0;

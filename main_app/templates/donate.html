@@ -1,0 +1,493 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css-link %}
+<link rel="stylesheet" href="{% static 'style/donate.css' %}">
+  
+{% endblock css-link %}
+
+{% block site-content %}
+      <!-- HEADER -->
+      <header class="firstDom">
+        <!-- NAVBAR -->
+        <nav class="container navbar-container">
+            <div class="row navbar-row">
+                <!-- NAVBAR LOGO IMAGE -->
+                <div class="col-lg-3 navbar-logo">
+                    <div class="navbar-logo-image">
+                        <a href="#">
+                            <img src="{% static '/img/logo.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-6 navbar-menu">
+                    <!-- HAMBURGER ICON(RESPONSIVE GORUNUM İLK BASTA DİSPLAY NONE) -->
+                    <div class="navbar-hamburger-icon">
+                        <span class="hamburger-icon">
+                            <i class="fa-solid fa-bars"></i>
+                        </span>
+                    </div>
+                    <!-- MENU LİSTESİ -->
+                    <div class="navbar-menu-list">
+                        <ul class="navbarList">
+                            <li class="navbar-dropdown" >
+                              <button class="dropdown-button">
+                              <a class="text-decoration-none text-white" href="{% url 'whyoralhealt' %}"></a>  WHY ORAL HEALTH?
+                              </button>
+                            </li>
+                            <li class="navbar-dropdown">
+                              <div class="navbar-dropdown-button">
+                                <button class="dropdown-button">
+                                  <a class="text-decoration-none text-white" href="{% url 'ourwork' %}">OUR WORK</a> 
+                                </button>
+                                <span class="navbar-icon">
+                                  <i class="fa-solid fa-caret-down"></i>
+                                </span>
+                              </div>
+                              <!-- DROPDOWN MENU -->
+                              <div class="navbar-dropdown-hover">
+                                <ul class="dropdown-hover-list">
+                                  <li class="dropdown-link">
+                                    <a href="#">DENTAL CLINIC</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                    <a href="#">FELLOWSHIP</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                    <a href="#">ZERO CAVITY INITIATIVE</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="navbar-dropdown">
+                              <div class="navbar-dropdown-button">
+                                <button class="dropdown-button">
+                                  <a class="text-decoration-none text-white" href="{% url 'involved' %}">     GET INVOLVED</a>   
+                                </button>
+                                <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
+                              </div>
+                              <!-- DROPDOWN MENU -->
+                              <div class="navbar-dropdown-hover">
+                                <ul class="dropdown-hover-list">
+                                  <li class="dropdown-link">
+                                    <a href="#">PARTNERSHIP</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                    <a href="#">LEADERSHIP COUNCIL</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                    <a href="#">TAKE THE PLEDGE</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                    <a href="#">VOLUNTEER</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                    <a href="#">THE GLOBAL GOALS</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="navbar-dropdown">
+                              <div class="navbar-dropdown-button">
+                                <button class="dropdown-button">
+                                  <a class="text-decoration-none text-white" href="{% url 'aboutus' %}">ABOUT US</a>                     
+                                </button>
+                                <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
+                              </div>
+                              <!-- DROPDOWN MENU -->
+                              <div class="navbar-dropdown-hover">
+                                <ul class="dropdown-hover-list">
+                                  <li class="dropdown-link">
+                                    <a href="#">LEADERSHIP TEAM</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                    <a href="#">TRANSPARENCY</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                    <a href="#">CAREERS</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                    <a href="#">BLOG</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+                <!-- NAVBAR DONATE BUTTON -->
+                <div class="col-6 col-lg-3 navbar-donate">
+                    <div class="navbar-donete-button">
+                        <button class="donateButton">DONATE NOW</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- HEADER ORTA KISIM -->
+        <section class="container firstDom-behind">
+            <!-- SOL TARAF -->
+            <div class="row firstDom-behind-row">
+                <article class="col-lg-8 firstDom-behind-left">
+                    <div class="behind-left">
+                        <div class="behind-left-title">
+                            <h1>THIS HOLIDAY</h1>
+                            <h1>SEASON!</h1>
+                        </div>
+                        <div class="behind-left-paragraph">
+                            <h5>Help us create better access to preventative dental care in Costa Rica.</h5>
+                        </div>
+                        <div class="behind-left-buttons">
+                            <div class="behind-left-buttons-join">
+                                <button>Join us now!</button>
+                            </div>
+                            <div class="behind-left-butttons-other">
+                                <button>Other Ways To Give</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- SAĞ TARAF -->
+                <article class="col-lg-4 firstDom-behind-right">
+                    <div class="donateArea">
+                        <div class="donateArea-first">
+                            <div class="donateType">
+                                <span class="donateType-one">
+                                    <button class="oneTime-btn allButton">One Time</button>
+                                </span>
+                            </div>
+                            <div class="donateType">
+                                <span class="donateType-monthly">
+                                    <button class="montly-btn allButton">Monthly</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="donateArea-second">
+                            <div class="donatePay">
+                                <span class="donatePayButton">
+                                    <button class="button-25 allButton">$25</button>
+                                </span>
+                            </div>
+                            <div class="donatePay">
+                                <span class="donatePayButton">
+                                    <button class="button-50 allButton">$50</button>
+                                </span>
+                            </div>
+                            <div class="donatePay">
+                                <span class="donatePayButton">
+                                    <button class="button-100 allButton">$100</button>
+                                </span>
+                            </div>
+                            <div class="donatePay">
+                                <span class="donatePayButton">
+                                    <button class="button-250 allButton">$250</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="donateArea-third">
+                            <div class="donateInput">
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="text" class="form-control" id="input-content" aria-label="Amount (to the nearest dollar)">
+                                    <span class="input-group-text">USD</span>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="donateArea-fourth">
+                            <div class="donateGift">
+                                <button>
+                                    <span class="donateGift-icon">
+                                        <i class="bi bi-heart"></i>
+                                    </span>
+                                    Dedicate This Gift
+                                </button>
+                            </div>
+                        </div>
+                        <div class="donateArea-fifth">
+                            <div class="donate-fifthButton">
+                                <button class="button-content">DONATE</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </header>
+
+    <!-- SECOND CONTAIN -->
+    <div class="secondContain-back">
+        <section class="container secondContain">
+            <div class="row secondContai-row">
+                <article class="col-lg-6 secondContain-right">
+                    <div class="secondContain-right-title">
+                        <h1>Support our life-changing work.</h1>
+                    </div>
+                    <div class="secondContain-right-paragraph">
+                        <h5>100% of your gift will towards the opening of our community dental clinic in Costa Rica.</h5>
+                    </div>
+                </article>
+                <article class="col-lg-6 secondContain-left">
+                    <div class="secondContain-left-paragraph1">
+                        <p>According to a new <a class="secondContain-left-paragraph-link" href="#">Global Oral Health Status Report</a> published on November 21, 2022 by the World Health Organization (WHO), the burden of
+                        <a class="secondContain-left-paragraph-link" href="#">#OralDisease</a> is at an alarming all-time high and requires urgent action.
+                        </p>
+                    </div>
+                    <div class="secondContain-left-paragraph2">
+                        <p>At <strong>UNSPOKEN SMILES</strong> , we recognize the lack of access to oral healthcare as one of the most under-publicized, and simultaneously one of the most detrimental, factors limiting the full potential of children in low-income areas.</p>
+                    </div>
+                    <div class="secondContain-left-paragraph3">
+                        <p>With your donation, we can continue investing in the people and systems working to bring dental care to the people who need it most.</p>
+                    </div>
+                    <div class="secondContain-left-paragraph4">
+                        <p>Together, we can realize a future of oral health for all.</p>
+                    </div>
+                    <div class="secondContain-left-paragraph5">
+                        <p><strong>UNSPOKEN SMILES is a 501(c)(3) charitable organization, EIN 46-2785474, all contributions are tax deductible.</strong></p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="mainContent-back">
+        <main class="container thirdContain">
+            <div class="row">
+                <div class="col-12">
+                    <div class="thirdContain-title">
+                        <div class="thirdContain-title-baslik mb-4">
+                            <h3>More ways to give</h3>
+                        </div>
+                        <div class="thirdContain-title-border"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main content cart bölümü -->
+            <section class="row thirdContain-alt">
+                <article class="col-md-6 col-lg-4 thirdContain-col">
+                    <div class="thirdContain-cart">
+                        <div class="contain-cart-content">
+                            <div class="cartContent-icon">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <div class="cartContent-text">
+                                <h6>Donate via mobile phone</h6>
+                                <p>Text the code "GIVEUSMILES" to 44-321 to make a contribution from your phone.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-6 col-lg-4 thirdContain-col">
+                    <div class="thirdContain-cart">
+                        <div class="contain-cart-content">
+                            <div class="cartContent-icon">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <div class="cartContent-text">
+                                <h6>Give by check or stock</h6>
+                                <p>We also accept donations by check, stock, money order, and wire transfer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-6 col-lg-4 thirdContain-col">
+                    <div class="thirdContain-cart">
+                        <div class="contain-cart-content">
+                            <div class="cartContent-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div class="cartContent-text">
+                                <h6>Start a new Peer-to-Peer page</h6>
+                                <p>Support one of our many fundraisers raising money for oral health care. </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-6 col-lg-4 thirdContain-col">
+                    <div class="thirdContain-cart">
+                        <div class="contain-cart-content">
+                            <div class="cartContent-icon">
+                                <i class="fa-solid fa-address-card"></i>
+                            </div>
+                            <div class="cartContent-text">
+                                <h6>Become a Member</h6>
+                                <p>Give monthly, and you’ll become part of our Leadership Council, a passionate community of supporters committed to bringing oral health care to everyone, everywhere.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-6 col-lg-4 thirdContain-col">
+                    <div class="thirdContain-cart">
+                        <div class="contain-cart-content">
+                            <div class="cartContent-icon">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                            <div class="cartContent-text">
+                                <h6>Transform a Life</h6>
+                                <p>Our fellowship program equips women with sustainable careers in dentistry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-6 col-lg-4 thirdContain-col">
+                    <div class="thirdContain-cart">
+                        <div class="contain-cart-content">
+                            <div class="cartContent-icon">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <div class="cartContent-text">
+                                <h6>Give in Honor of Someone</h6>
+                                <p>Honor or remember someone special by making a gift in their name.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- Main content accordion -->
+            <section class="row mainContent-accordion">
+                <div class="col-lg-6 mainContent-accordionLeft">
+                    <div class="accordionLeft-title">
+                        <h1>FREQUENTLY ASKED QUESTIONS</h1>
+                    </div>
+                    <div class="accordionLeft-border"></div>
+                </div>
+                <article class="col-lg-6 mainContent-accordionRight">
+                    <div class="accordionRight-content">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    I have a question, comment, or concern about my donation. Who can I contact?
+                                </button>
+                              </h2>
+                              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    Is my donation tax-deductible?
+                                </button>
+                              </h2>
+                              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                    Will I get a receipt?
+                                </button>
+                              </h2>
+                              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                    Is my online donation secure?
+                                </button>
+                              </h2>
+                              <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                    Can I send a check, a gift of stock, or a wire transfer?
+                                </button>
+                              </h2>
+                              <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                                    What are the benefits of becoming a monthly donor?
+                                </button>
+                              </h2>
+                              <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                                    Can I have my employer match my gift?
+                                </button>
+                              </h2>
+                              <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                                    What if my organization is interested in partnering with yours?
+                                </button>
+                              </h2>
+                              <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                                    What if my organization is interested in partnering with yours?
+                                </button>
+                              </h2>
+                              <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+                                    What if my organization is interested in partnering with yours?
+                                </button>
+                              </h2>
+                              <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+    
+    
+    <section class="endContent">
+        <div class="container endContent-container">
+            <div class="row">
+                <div class="col-lg-9 endContent-text">
+                    <div class="endContent-text-title">
+                        <h1>Help us Create Happier, Healthier Futures For All</h1>
+                    </div>
+                    <div class="endContent-text-subTitle">
+                        <p>Join our movement to bring quality oral health care to those in need.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 endContent-button">
+                    <div class="endContent-btn">
+                        <button>DONATE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        const clickIcon=document.querySelector(".hamburger-icon")
+        const navbarList=document.querySelector(".navbar-menu-list")
+        clickIcon.addEventListener("click",function(){
+            navbarList.classList.toggle("responsive")
+        })
+    </script>
+    
+    <script src="{% static 'donate.js' %}"></script>
+
+{% endblock site-content %}
