@@ -10,7 +10,7 @@ from django.http import JsonResponse
 from user_app.models import Donations,DonationType
 from user_app.models import blog as BlogModels
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.models import User
 
 API_KEY = 'sandbox-ybJixj0TVm9yQcaLZKYjN5hiAwUzFMcI'
 SECRET_KEY = 'sandbox-nW30QdMCvJ5HKsBoQXGH288DcJ4ZoaIV'
@@ -33,7 +33,7 @@ def index(request):
     return render(request,'index.html',context)
 
 
-@login_required(login_url='/signup') 
+# @login_required(login_url='/signup') 
 def payment(request):
     price = request.POST.get('price')
     if price:   
@@ -174,14 +174,14 @@ def payment(request):
 @require_http_methods(['POST'])
 @csrf_exempt
 
-@login_required(login_url='/signup') 
+# @login_required(login_url='/signup') 
 def result(request):
     context = dict()
     print('*'*50)
     print(request.user)
     print('*'*50)
     url = request.META.get('index')
-
+    user = User
     request_iyzico = {
         'locale':'tr',
         'conversationId':'123456789',
@@ -212,6 +212,8 @@ def result(request):
     print('sözlük token')
     print(sozlukToken)
     print('*0'*50)
+
+
 
     if sonuc[0][1] == 'success':
         quantity = sonuc[5][1]
