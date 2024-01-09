@@ -37,7 +37,7 @@ def index(request):
 def payment(request):
     price = request.POST.get('price')
     if price:   
-
+        print('fiytayyy',price)
         context = dict()
         OneTime = request.POST.get('oneTime')
         Monthly = request.POST.get('monthly')
@@ -99,6 +99,7 @@ def payment(request):
                 'price': '0.3'
             }
         ]
+        print(price)
         request_iyzico = {
             'locale': 'tr',
             'conversationId': '123456789',
@@ -166,6 +167,7 @@ def payment(request):
 
         response = HttpResponse(json_content['checkoutFormContent'])
         response.set_cookie('donationtype',DonationType)
+        response.set_cookie('para',price)
         return response
         
     else:
@@ -216,8 +218,13 @@ def result(request):
 
 
     if sonuc[0][1] == 'success':
-        quantity = sonuc[5][1]
+        # quantity = sonuc[5][1]
+        print('*'*50)
+        print('sonucsdasdasdasdasdas',sonuc[5][1])
         donation_type =  request.COOKIES.get('donationtype')
+        quantity =  request.COOKIES.get('para')
+        print('fiyat cookie',quantity)
+        print('fiyat cookie',type(quantity))
         print('donate tipiğ',donation_type)
         user =  request.user
         print('KULANICIIII',user)
