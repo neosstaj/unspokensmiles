@@ -9,4 +9,4 @@ Eklenmezse Donate kısmı çalışmaz
 
 HATA KODLARI
 - [x] (Geçersiz imza) Sebebi kullanıcının first_name & Last_name alanlarının boş bırakılması
-- [x] (502) Sebebi kullanıcının 6. maddenin yapılmaması
+- [x] (502) Sebebi  6. maddenin yapılmaması (Donate Types)
