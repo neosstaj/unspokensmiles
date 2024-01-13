@@ -36,27 +36,29 @@ def index(request):
 # @login_required(login_url='/signup') 
 def payment(request):
     price = request.POST.get('price')
+    donate_path = request.POST.get('donatepath')
     if price:   
         print('fiytayyy',price)
         context = dict()
         OneTime = request.POST.get('oneTime')
         Monthly = request.POST.get('monthly')
+
         print('onetime',OneTime)
         print('Monthly',Monthly)
         print('Monthly',len(OneTime))
         print('Monthly',len(Monthly))
         print('Monthly',len(Monthly)>0)
         print('Monthly',len(OneTime)>0)
-        
 
         if len(OneTime) > 0 or len(Monthly) > 0:        
-            
             if OneTime == '1':
                 DonationType = 1
             else:
                 DonationType = 2
         else:
             messages.add_message(request,messages.ERROR,'Lütfen Bağış Tipi seçin',extra_tags='payment-error')
+            if donate_path:
+                return redirect('donate')
             return redirect('/')
         
         print('onetime',OneTime)
@@ -131,8 +133,6 @@ def payment(request):
         print(content)
         content_yazdir = json.loads(content)
 
-       
-
 
         errorCode = content_yazdir.get('errorCode')
         errorMessage = content_yazdir.get('errorMessage')
@@ -141,6 +141,8 @@ def payment(request):
 
         if content_yazdir.get('errorCode') or content_yazdir.get('errorMessage'):
             messages.error(request, f'Hata Kodu: {errorCode}, Hata Mesajı: {errorMessage}', extra_tags='payment-error')
+            if donate_path:
+                return redirect('donate')
             return redirect('/')
         
 
@@ -160,18 +162,16 @@ def payment(request):
         print(json_content["token"])
         print('*0'*50)
 
-
         sozlukToken.append(json_content['token'])
-
-
-
         response = HttpResponse(json_content['checkoutFormContent'])
         response.set_cookie('donationtype',DonationType)
         response.set_cookie('para',price)
-        return response
-        
+        return response  
     else:
         messages.add_message(request,messages.ERROR,'Lütfen Miktar giriniz',extra_tags='payment-error')
+        print(donate_path)
+        if donate_path:
+            return redirect('donate')
         return redirect('/')
 @require_http_methods(['POST'])
 @csrf_exempt
@@ -209,25 +209,22 @@ def result(request):
     print('KULANICIIIssssI',user)
     for i in sonuc:
         print('sonuclar',i,'tipi',type(i))
-
     print('*0'*50)
     print('sözlük token')
     print(sozlukToken)
     print('*0'*50)
-
-
-
     if sonuc[0][1] == 'success':
         # quantity = sonuc[5][1]
         print('*'*50)
         print('sonucsdasdasdasdasdas',sonuc[5][1])
         donation_type =  request.COOKIES.get('donationtype')
         quantity =  request.COOKIES.get('para')
-        print('fiyat cookie',quantity)
-        print('fiyat cookie',type(quantity))
-        print('donate tipiğ',donation_type)
+        if donation_type is None:
+            messages.add_message(request,messages.ERROR,'Lütfen Donate Tipini admin panelden ekleyin Eror Code (524)',extra_tags='payment-error')
+            return redirect('/')
+
         user =  request.user
-        print('KULANICIIII',user)
+   
         # AYLIK ÜYELİK TİPİ İD 2 TEK SEFERLİK 1
         if donation_type == '1':
             donation_type = DonationType.objects.filter(title = 'Tek Seferlik').first()

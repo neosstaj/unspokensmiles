@@ -105,7 +105,7 @@ DONATE END -->
                     YEARS
                     OF SUSTAINABLE IMPACT
   
-                    Learn More</p>
+                    </p>
                 </li>
   
               </ul>
@@ -119,8 +119,9 @@ DONATE END -->
               </div>
             </div>
           </div>
-          <button class="btn btn-primary text-white btn-blue">Learn
-            More</button>
+          <a href="{% url 'whyoralhealt' %}" class="text-white text-decoration-none"><button class="btn btn-primary text-white btn-blue">
+           Learn More
+          </button></a>
         </div>
       </div>
   
@@ -447,7 +448,8 @@ DONATE END -->
           <p class="text-white pt-4">Join our movement to bring quality oral health care to those in need.</p>
         </div>
         <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center">
-          <button class="btn btn-blue text-white" style="background-color: black;">DONATE</button>
+         <a href="{% url 'donate' %}" class="text-decoration-none text-white"> <button class="btn btn-blue text-white" style="background-color: black;" >
+            DONATE</button></a> 
         </div>
       </div>
     </div>

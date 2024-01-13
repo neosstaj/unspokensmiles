@@ -15,121 +15,11 @@
     </div>
     <hr class="m-1 text-white hr-absolute">
     <div class="navbar-container">
-      <div class="row navbar-row">
-        <!-- NAVBAR LOGO IMAGE -->
-        <div class="col-lg-3 navbar-logo">
-          <div class="navbar-logo-image">
-            <a href="#">
-              <img src="{% static 'img/logo.png' %}" alt="" />
-            </a>
-          </div>
-        </div>
-        <div class="col-6 col-lg-6 navbar-menu">
-          <!-- HAMBURGER ICON(RESPONSIVE GORUNUM İLK BASTA DİSPLAY NONE) -->
-          <div class="navbar-hamburger-icon">
-            <span class="hamburger-icon">
-              <i class="fa-solid fa-bars"></i>
-            </span>
-          </div>
-          <!-- MENU LİSTESİ -->
-          <div class="navbar-menu-list">
-            <ul class="navbarList">
-              <li class="navbar-dropdown" >
-                <button class="dropdown-button">
-                <a class="text-decoration-none text-white" href="{% url 'whyoralhealt' %}"></a>  WHY ORAL HEALTH?
-                </button>
-              </li>
-              <li class="navbar-dropdown">
-                <div class="navbar-dropdown-button">
-                  <button class="dropdown-button">
-                    <a class="text-decoration-none text-white" href="{% url 'ourwork' %}">OUR WORK</a> 
-                  </button>
-                  <span class="navbar-icon">
-                    <i class="fa-solid fa-caret-down"></i>
-                  </span>
-                </div>
-                <!-- DROPDOWN MENU -->
-                <div class="navbar-dropdown-hover">
-                  <ul class="dropdown-hover-list">
-                    <li class="dropdown-link">
-                      <a href="#">DENTAL CLINIC</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">FELLOWSHIP</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">ZERO CAVITY INITIATIVE</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="navbar-dropdown">
-                <div class="navbar-dropdown-button">
-                  <button class="dropdown-button">
-                    <a class="text-decoration-none text-white" href="{% url 'involved' %}">     GET INVOLVED</a>   
-                  </button>
-                  <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
-                </div>
-                <!-- DROPDOWN MENU -->
-                <div class="navbar-dropdown-hover">
-                  <ul class="dropdown-hover-list">
-                    <li class="dropdown-link">
-                      <a href="#">PARTNERSHIP</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">LEADERSHIP COUNCIL</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">TAKE THE PLEDGE</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">VOLUNTEER</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">THE GLOBAL GOALS</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="navbar-dropdown">
-                <div class="navbar-dropdown-button">
-                  <button class="dropdown-button">
-                    <a class="text-decoration-none text-white" href="{% url 'aboutus' %}">ABOUT US</a>                     
-                  </button>
-                  <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
-                </div>
-                <!-- DROPDOWN MENU -->
-                <div class="navbar-dropdown-hover">
-                  <ul class="dropdown-hover-list">
-                    <li class="dropdown-link">
-                      <a href="#">LEADERSHIP TEAM</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">TRANSPARENCY</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">CAREERS</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">BLOG</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- NAVBAR DONATE BUTTON -->
-        <div class="col-6 col-lg-3 navbar-donate">
-          <div class="navbar-donete-button">
-            <button class="donateButton">DONATE NOW</button>
-          </div>
-        </div>
-      </div>
+      {% include "partials/_navbar.html" %}
     </div>
     <form action="{% url 'payment'  %}" method="post">
       <div class="row bg-filter ">
-        <div class="col-12 col-lg-9  header-text">
+        <div class="col-12 col-lg-8  header-text">
           <h1 class="header-bg-font ">3.58 BILLION</h1>
           <p class="text-white f-18" style="font-family: Arial, Helvetica, sans-serif">
             Nearly half the world’s population suffers from oral disease.
@@ -141,26 +31,30 @@
           </p>
           <div class="row flex-column">
             <div class="col-6">
-              <button type="button" class="btn btn-round text-left mt-4 b-style">
-                <a href="#" class="b-font-family"><strong>Learn More</strong></a>
-              </button>
+              <a href="{% url 'whyoralhealt' %}" class="b-font-family"><button type="button" class="btn btn-round text-left mt-4 b-style">
+              <strong>Learn More</strong>
+              </button></a>
             </div>
             <div class="col-6">
-              <button type="button" class="btn btn-round text-left   mt-3 b-style">
-                <a href="#" class="b-font-family"> <strong>Take Action</strong></a>
+              <a href="{% url 'involved' %}" class="b-font-family">
+                 <button type="button" class="btn btn-round text-left   mt-3 b-style">
+                 <strong>Take Action</strong>
               </button>
+            </a>
             </div>
           </div>
 
         </div>
-        <div class="col-12  col-lg-3">
+        <div class="col-12 col-lg-4">
           <div class="row btn-row">
             {% csrf_token %}
-            <div class="col-6 p-0 pe-1"> <button name="oneTime"  type="button" id="ot" class="btn  btn-outline-dark w-100 donate-btn-outline" onclick="OneTime(this)">One
+            <div class="col-6 p-0 pe-1"> <button name="oneTime" type="button" id="ot"
+                class="btn  btn-outline-dark w-100 donate-btn-outline" onclick="OneTime(this)">One
                 Time</button>
               <input type="" class="d-none" name="oneTime" id="ot_input">
-              </div>
-            <div class="col-6 p-0 "> <button name="monthly" type="button" id="mt" class="btn btn-light w-100 btn-color" onclick="Monthly(this)">Monthly</button></div>
+            </div>
+            <div class="col-6 p-0 "> <button name="monthly" type="button" id="mt" class="btn btn-light w-100 btn-color"
+                onclick="Monthly(this)">Monthly</button></div>
             <input type="" class="d-none" name="monthly" id="mt_input">
           </div>
           <div class="row pt-1 btn-row">
@@ -189,16 +83,16 @@
           <div class="row pt-1">
             <div class="col-12 p-0">
               {% for message in messages %}
-                {% if 'payment-error' in message.tags %}
-                <div class="alert alert-danger text-center">
-                  {{message}}
-                </div>
-                {% endif %}
-                {% if 'py-success' in message.tags %}
-                <div class="alert alert-success text-center">
-                  {{message}}
-                </div>
-                {% endif %}
+              {% if 'payment-error' in message.tags %}
+              <div class="alert alert-danger text-center">
+                {{message}}
+              </div>
+              {% endif %}
+              {% if 'py-success' in message.tags %}
+              <div class="alert alert-success text-center">
+                {{message}}
+              </div>
+              {% endif %}
               {% endfor %}
               <button class="w-100 gift-btn mt-3 mb-3 "> <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                   height="14px" width="14px" viewBox="0 0 512 512" style="vertical-align: inherit; margin-right: 3px;">
@@ -210,22 +104,14 @@
           </div>
           <div class="row pt-1">
             <div class="col-12 p-0">
-
               <button class="w-100 donate-btn f-18" type="submit">
-                <a class="text-white text-decoration-none" {% if request.user.is_authenticated %}
-                 {% else %}
-                 href="{% url 'signup' %}"    
-                 {% endif %}
-                >
-                DONATE
-              </a>
-
+                <a class="text-white text-decoration-none" {% if request.user.is_authenticated %} {% else %}
+                  href="{% url 'signup' %}" {% endif %}>
+                  DONATE
+                </a>
               </button>
             </div>
           </div>
-
-
-
         </div>
       </div>
     </form>

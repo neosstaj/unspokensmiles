@@ -6,27 +6,18 @@
 <link rel="stylesheet" href="{% static 'style/register.css' %}">
 {% endblock css-link %}
 
-{% block css-other %}
-
-{% endblock css-other %}
 
 {% block site-content %}
 
-<div class="container">
+
+
+<div class="container-register">
 
   {% csrf_token %}
   <div class="forms-container">
     <div class="signin-signup">
       <form class="sign-in-form" action="{% url 'signin' %}" method="post">
         {% csrf_token %}
-        {% for message in messages %}
-        {% if 'signup-error' in message.tags %}
-        <div class="alert alert-danger">
-          {{message}}
-        </div>
-        {% endif %}
-        {% endfor %}
-
         <h2 class="title">Giriş Yap</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
@@ -36,31 +27,24 @@
           <i class="fas fa-lock"></i>
           <input type="password" placeholder="Şifre" name="password" />
         </div>
-        <input type="submit" value="Login" class="btn solid" />
-        <p class="social-text">Or Sign in with social platforms</p>
-        <div class="social-media">
-          <a href="#" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-google"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+        <input type="submit" value="Giriş Yap" class="btn solid" />
+        {% for message in messages %}
+        {% if 'signin-error' in message.tags %}
+        <div style="color: red;">
+          {{message}}
         </div>
+        {% endif %}
+        {% endfor %}
+
       </form>
-      <form action="#" class="sign-up-form" action="{% url 'signup' %}" method="post">
+      <form class="sign-up-form" action="{% url 'signup' %}" method="post">
         {% csrf_token %}
+
         <h2 class="title">Kayıt Ol</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
           <input type="text" placeholder="Username" name="isim" />
         </div>
-
         <div class="input-field">
           <i class="fas fa-envelope"></i>
           <input type="text" name="soyisim" placeholder="Email" />
@@ -74,26 +58,65 @@
           <input type="password" placeholder="password" name="password" />
         </div>
         <input type="submit" class="btn" value="Kayıt Ol" />
-        <p class="social-text">Or Sign up with social platforms</p>
-        <div class="social-media">
-          <a href="#" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-google"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+        {% for message in messages %}
+        {% if 'signup-error' in message.tags %}
+        <div style="color: red;">
+          {{message}}
         </div>
+        {% endif %}
+        {% endfor %}
+
       </form>
     </div>
   </div>
 
   <div class="panels-container">
+      <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top  ">
+    <div class="container">
+      <a class="navbar-brand" id="logoRegisterİmg" href="/"
+        ><img
+          id="MDB-logo"
+          src="{% static 'img/logo.png' %}"
+          alt="MDB Logo"
+          draggable="false"
+          height="30"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      onclick="navbaractivate()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"  style="  transition: width 2s">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="{% url 'whyoralhealt' %}">WHY ORAL HEALTH?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="{% url 'ourwork' %}">OUR WORK</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="{% url 'involved' %}"> GET INVOLVED</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link mx-2" href="{% url 'aboutus' %}">ABOUT US</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link mx-2" href="{% url 'blog' %}">BLOG</a>
+            </li>
+  
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
     <div class="panel left-panel">
       <div class="content">
         <h3>Hesabınız yokmu ?</h3>
@@ -120,72 +143,32 @@
     </div>
   </div>
 </div>
+<!-- BOOTSTRAP CDN  -->
+{% block proje-script %}
+  
+
+{% endblock proje-script %}
 <script>
   const sign_in_btn = document.querySelector("#sign-in-btn");
   const sign_up_btn = document.querySelector("#sign-up-btn");
-  const container = document.querySelector(".container");
+  const container = document.querySelector(".container-register");
+  let logoRegisterİmg = document.getElementById('logoRegisterİmg')
 
   sign_up_btn.addEventListener("click", () => {
     container.classList.add("sign-up-mode");
+    logoRegisterİmg.classList.add('registerNavActive')
   });
 
   sign_in_btn.addEventListener("click", () => {
     container.classList.remove("sign-up-mode");
+    logoRegisterİmg.classList.remove('registerNavActive')
   });
+
+
+  function navbaractivate(){
+    navbarac = document.getElementById('navbarSupportedContent')
+    navbarac.classList.toggle('navbar-activate-register')
+    
+  }
 </script>
-
-
-
-
-<!-- <div class="container">
-  <form class="registerForm" action="{% url 'signup' %}" method="post">
-
-    {% for message in messages %}
-    {% if 'signup-error' in message.tags %}
-      <div class="alert alert-danger">
-        {{message}}
-      </div>
-    {% endif %}
-
-  {% endfor %}
-    {% csrf_token %}
-    <section class="login-panel">
-      <div class="right-side">
-        <h1>Kaydol</h1>
-        <p>Sign up and get a free pressent</p>
-        <input type="text" name="isim" id="" placeholder="Name">
-        <input type="text" name="soyisim" id="" placeholder="Surname">
-        <input type="email" name="email" id="" placeholder="Email">
-        <input type="password" name="password" id="" placeholder="Password">
-        <input type="submit" value="let's go" class="submit-btn">
-      </div>
-    </section>
-  </form>
-  <div class="or">
-    <p>OR</p>
-  </div>
-
-  <form class="registerForm ms-auto" action="{% url 'signup' %}" method="post">
-
-    {% for message in messages %}
-    {% if 'signup-error' in message.tags %}
-      <div class="alert alert-danger">
-        {{message}}
-      </div>
-    {% endif %}
-
-  {% endfor %}
-    {% csrf_token %}
-    <section class="login-panel">
-      <div class="right-side ">
-        <h1>Giriş Yap</h1>
-        <p>Login and continue the goodness</p>
-        <input type="text" name="isim" id="" placeholder="Name">
-        <input type="password" name="password" id="" placeholder="Password">
-        <input type="submit" value="let's go" class="submit-btn">
-      </div>
-    </section>
-  </form>
-</div> -->
-
 {% endblock site-content %}
