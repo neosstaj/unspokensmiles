@@ -3,6 +3,8 @@
 {% block css-link %}
 <link rel="stylesheet" href="{% static 'style/donate.css' %}">
 <link rel="stylesheet" href="{% static 'style/style.css' %}">
+<link rel="stylesheet" href="{% static 'style/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'style/footer.css' %}">
 {% endblock css-link %}
 
 {% block site-content %}
@@ -431,7 +433,7 @@
 
 <section class="endContent">
   <div class="container endContent-container">
-    <div class="row">
+    <div class="row endContent-row">
       <div class="col-lg-9 endContent-text">
         <div class="endContent-text-title">
           <h1>Help us Create Happier, Healthier Futures For All</h1>
@@ -442,20 +444,17 @@
       </div>
       <div class="col-lg-3 endContent-button">
         <div class="endContent-btn">
-          <button>DONATE</button>
+          <button>
+            <a href="#donate-yonlendirme">DONATE</a>
+          </button>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+{% include "partials/_footer.html" %}
 <script src="{% static 'js/index.js' %}"></script>
-<script>
-  const clickIcon = document.querySelector(".hamburger-icon")
-  const navbarList = document.querySelector(".navbar-menu-list")
-  clickIcon.addEventListener("click", function () {
-    navbarList.classList.toggle("responsive")
-  })
-</script>
 
 <!-- <script src="{% static 'js/donate.js' %}"></script> -->
 

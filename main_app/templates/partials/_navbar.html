@@ -9,7 +9,7 @@
         </a>
       </div>
     </div>
-    <div class="col-6 col-lg-6 navbar-menu">
+    <div class="col-8 col-sm-5 col-lg-5 col-xl-6 navbar-menu">
       <!-- HAMBURGER ICON(RESPONSIVE GORUNUM İLK BASTA DİSPLAY NONE) -->
       <div class="navbar-hamburger-icon">
         <span class="hamburger-icon">
@@ -51,7 +51,7 @@
           <li class="navbar-dropdown">
             <div class="navbar-dropdown-button">
               <button class="dropdown-button">
-                <a class="text-decoration-none text-white" href="{% url 'involved' %}">     GET INVOLVED</a>   
+                <a class="text-decoration-none text-white" href="{% url 'involved' %}">GET INVOLVED</a>
               </button>
               <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
             </div>
@@ -101,13 +101,22 @@
               </ul>
             </div>
           </li>
+          <li class="navbar-dropdown">
+            <div class="navbar-donete-button donateButton-display">
+              <a class="text-white text-decoration-none" href="{% url 'donate' %}"> 
+                <button class="donateButton">DONATE NOW</button>
+              </a>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
     <!-- NAVBAR DONATE BUTTON -->
-    <div class="col-6 col-lg-3 navbar-donate">
-      <div class="navbar-donete-button">
-        <a class="text-white text-decoration-none" href="{% url 'donate' %}"> <button class="donateButton">DONATE NOW</button></a>
+    <div class="col-4 col-sm-7 col-lg-4 col-xl-3 navbar-donate" id="donate-yonlendirme">
+      <div class="navbar-donete-button displayNone-buuton">
+        <a class="text-white text-decoration-none" href="{% url 'donate' %}"> 
+          <button class="donateButton">DONATE NOW</button>
+        </a>
       </div>
       {% if request.user.is_authenticated %}
         {% else %}

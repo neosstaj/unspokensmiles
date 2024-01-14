@@ -7,10 +7,16 @@
 .navbar-container{
     padding: 15px;
 }
+.navbar-row{
+    margin-right: 0;
+    margin-left: 0;
+}
 /* NAVBAR IMAGE */
 .navbar-logo{
     padding-top: 8px;
     cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
 }
 .navbar-logo-image img{
     width: 80%;
@@ -18,6 +24,8 @@
 /* NAVBAR MENU BOLUMU */
 .navbar-menu{
     padding-top: 13px;
+    padding-left: 0;
+    padding-right: 0;
 }
 .navbarList{
     display: flex;
@@ -28,7 +36,7 @@
 .dropdown-button{
     border: none;
     background: none;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     color: #fff;
     transition: color .3s;
@@ -92,6 +100,8 @@
     justify-content: end;
     align-items: start;
     padding-top: 3px;
+    padding-right: 0;
+    padding-left: 0;
 }
 .donateButton{
     background: black;
@@ -118,6 +128,9 @@
     color: #fff;
     font-size: 25px;
 }
+.donateButton-display{
+    display: none;
+}
 
 /* NAVBAR RESPONSIVE TASARIM CSS KODLAR */
 @media(max-width:1200px){
@@ -131,6 +144,7 @@
     .navbar-hamburger-icon{
         display: inline-block;
         margin-top: 5px;
+        margin-left: 20px;
     }
     .navbar-menu-list {
         max-height: 0;
@@ -148,10 +162,11 @@
         flex-direction: column;
         row-gap: 20px;
         margin-top: 20px;
+        margin-left: 70px;
         text-align: center;
     }
     .responsive.navbar-menu-list {
-        max-height: 200px;
+        max-height: 220px;
     }
 }
 @media(max-width:992px){
@@ -169,5 +184,29 @@
     }
     .responsive.navbar-menu-list .navbarList{
         text-align: start;
+        margin-left: 18px;
+    }
+}
+@media(max-width:768px){
+    .navbar-hamburger-icon{
+        margin-top: 0;
+        margin-left: 10px;
+    }
+    .donateButton{
+        font-size: 13px;
+    }
+}
+@media(max-width:576px){
+    .donateButton{
+        font-size: 13px;
+    }
+    .displayNone-buuton{
+        display: none;
+    }
+    .donateButton-display{
+        display: block;
+    }
+    .behind-left-buttons{
+        justify-content: center;
     }
 }
