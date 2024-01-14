@@ -25,7 +25,7 @@ def image_dir_path(instance, filename):
 class blog(models.Model):
     author = models.ForeignKey(User, verbose_name=("yazar"), on_delete=models.CASCADE)
     cover_image = models.ImageField(("kapak resmi"), upload_to=image_dir_path, )
-    title = models.CharField(("title"), max_length=50)
+    title = models.CharField(("title"), max_length=150)
     slug = models.SlugField(default = 'Slug ismi')
     content = RichTextField()
     created_date = models.DateTimeField( auto_now_add=True)

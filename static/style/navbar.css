@@ -63,6 +63,9 @@
     transform: translateY(20px);
     transition: all .2s
 }
+.dropdown-button{
+    font-size: 16px;
+}
 .dropdown-hover-list{
     list-style: none;
     padding-left: 0;
@@ -155,6 +158,9 @@
     }
     .navbar-dropdown-hover{
         left: 65%;
+    }
+    .dropdown-button{
+        font-size: 17px;
     }
     /* JS ile menünün açılmasına transation katıldı */
     .responsive.navbar-menu-list .navbarList{

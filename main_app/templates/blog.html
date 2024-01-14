@@ -5,12 +5,24 @@
 {% block css-link %}
 <link rel="stylesheet" href="{% static 'style/navbar.css' %}">
 <link rel="stylesheet" href="{% static 'style/blog.css' %}">
+<link rel="stylesheet" href="{% static 'style/footer.css' %}">
 {% endblock css-link %}
 
 
 
 {% block site-content %}
-
+    <style>
+        .blogDom{
+            height: 80vh;
+            background: 
+                linear-gradient(rgba(62, 55, 255, 0.8), rgba(62, 55, 255, 0.8)),
+                url(static/img/pexels-pixabay-262508.jpg);
+            background-position: center;
+            background-size: cover;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    </style>
 
     <!-- HEADER -->
     <header class="blogDom">
@@ -33,7 +45,9 @@
                         </div>
                         <div class="blogDom-left-buttons">
                             <div class="blogDom-left-buttons-donate">
-                                <button>Sign Up</button>
+                                <a href="{% url 'signup' %}">
+                                    <button>Sign Up</button>
+                                </a>
                             </div>
                             <div class="blogDom-left-butttons-take">
                                 <button>Take Action</button>
@@ -48,46 +62,48 @@
     <!-- MAIN ALAN -->
     <main class="container blogMain">
         <div class="row blogMain-row">
-            <section class="col-lg-8 blogMain-left">
+            <section class="col-12 col-xl-8 blogMain-left">
                 <div class="row blogMain-left-row justify-content-around row-gap-5">
                     {% for blogContent in blog  %}
                       
                
-                    <article class="col-md-5 col-lg-5 blogMain-left-cards">
-                        <a href="{{blogContent.get_absolute_url}}" class="leftCards-container">
-                            <div class="leftCards-container-image">
-                                <img src="{{blogContent.cover_image.url}}" alt="">
-                                <div class="leftCards-container-image-etiket">
-                                    <span class="image-etiket">Story</span>
-                                </div>
-                            </div>
-                            <div class="leftCards-container-content">
-                                <div class="leftCards-container-text">
-                                    <div class="leftCards-text-title">
-                                        <h5>{{blogContent.title}}</h5>
-                                    </div>
-                                    <div class="leftCards-text-paragraph">
-                                        <p class="text-black-50">{{blogContent.content|safe}}</p>
+                    <article class="col-md-6 col-lg-6 blogMain-left-col">
+                        <div class="blogMain-left-cards">
+                            <a href="{{blogContent.get_absolute_url}}" class="leftCards-container">
+                                <div class="leftCards-container-image">
+                                    <img src="{{blogContent.cover_image.url}}" alt="">
+                                    <div class="leftCards-container-image-etiket">
+                                        <span class="image-etiket">Story</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="leftCards-container-alt">
-                                <div class="leftCards-alt-section">
-                                    <div class="altSection-title">
-                                        <p>GÖNÜLLÜ VAKIF</p>
-                                    </div>
-                                    <div class="altSection-date">
-                                        <span class="date-day">{{blogContent.created_date}}</span>
-                                        
+                                <div class="leftCards-container-content">
+                                    <div class="leftCards-container-text">
+                                        <div class="leftCards-text-title">
+                                            <h5>{{blogContent.title}}</h5>
+                                        </div>
+                                        <div class="leftCards-text-content">
+                                            <p class="leftCards-text-paragraph text-black-50">{{blogContent.content|striptags}}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                                <div class="leftCards-container-alt">
+                                    <div class="leftCards-alt-section">
+                                        <div class="altSection-title">
+                                            <p>GÖNÜLLÜ VAKIF</p>
+                                        </div>
+                                        <div class="altSection-date">
+                                            <span class="date-day">{{blogContent.created_date}}</span>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </article>
                     {% endfor %}
                 </div>
             </section>
-            <section class="col-lg-4 blogMain-right">
+            <section class="col-12 col-xl-4 blogMain-right">
                 <article class="blogMain-first">
                     <div class="blogMain-first-founder">
                         <div class="firstFounder-title blogMain-title">
@@ -197,14 +213,8 @@
         </div>
     </main>
 
-
+    {% include "partials/_footer.html" %}
     
-    <!-- HAMBURGER ICON CLICK TANIMLANMASI(RESPONSIVE TASARIMDA DROPDOWN MENULERI AÇIYOR) -->
-    <script>
-        const clickIcon=document.querySelector(".hamburger-icon")
-        const navbarList=document.querySelector(".navbar-menu-list")
-        clickIcon.addEventListener("click",function(){
-            navbarList.classList.toggle("responsive")
-        })
-    </script>
+    <script src="{% static 'js/index.js' %}"></script>  
+    
 {% endblock site-content %}

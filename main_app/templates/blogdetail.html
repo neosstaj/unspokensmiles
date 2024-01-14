@@ -5,12 +5,24 @@
 {% block css-link %}
 <link rel="stylesheet" href="{% static 'style/navbar.css' %}">
 <link rel="stylesheet" href="{% static 'style/blog.css' %}">
+<link rel="stylesheet" href="{% static 'style/footer.css' %}">
 {% endblock css-link %}
 
 
 
 {% block site-content %}
-
+    <style>
+        .blogDom{
+            height: 80vh;
+            background: 
+                linear-gradient(rgba(62, 55, 255, 0.8), rgba(62, 55, 255, 0.8)),
+                url(static/img/pexels-pixabay-262508.jpg);
+            background-position: center;
+            background-size: cover;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    </style>
 
     <!-- HEADER -->
     <header class="blogDom">
@@ -26,8 +38,7 @@
                     <div class="blogDom-left">
                         <div class="blogDom-left-title">
                             <h1>{{blog.title}}</h1>
-                         
-                        </div>
+                         </div>
                         <div class="blogDom-left-paragraph">
                             <h5>Stay updated with the latest news from.</h5>
                         </div>
@@ -169,14 +180,8 @@
         </div>
     </main>
 
-
+    {% include "partials/_footer.html" %}
     
-    <!-- HAMBURGER ICON CLICK TANIMLANMASI(RESPONSIVE TASARIMDA DROPDOWN MENULERI AÇIYOR) -->
-    <script>
-        const clickIcon=document.querySelector(".hamburger-icon")
-        const navbarList=document.querySelector(".navbar-menu-list")
-        clickIcon.addEventListener("click",function(){
-            navbarList.classList.toggle("responsive")
-        })
-    </script>
+    <script src="{% static 'js/index.js' %}"></script>
+
 {% endblock site-content %}
