@@ -20,6 +20,8 @@
 .navbar-logo{
     padding-top: 8px;
     cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
 }
 .navbar-logo-image img{
     width: 75%;
@@ -28,6 +30,8 @@
 .navbar-menu{
     align-self: end;
     padding-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
 }
 .navbarList{
     display: flex;
@@ -101,6 +105,8 @@
     display: flex;
     justify-content: end;
     align-items: start;
+    padding-left: 0;
+    padding-right: 0;
 }
 .donateButton{
     background: black;
@@ -131,16 +137,6 @@
 
 /* HEADER CSS KODLARI */
 
-.firstDom{
-    height: 80vh;
-    background: 
-        linear-gradient(rgba(62, 55, 255, 0.8), rgba(062, 55, 255, 0.8)),
-        url(static/img/pexels-shelagh-murphy-2883380.jpg);
-    background-position: center;
-    background-size: cover;
-    padding-left: 0;
-    padding-right: 0;
-}
 .firstDom-behind{
     height: 90%;
     padding-left: 25px;
@@ -460,13 +456,6 @@
     background-color: black;
     margin-left: -10px;
 }
-
-.accordion-button::after{
-    background-image: url(static/img/down-arrow\(black\).png);
-}
-.accordion-button:not(.collapsed)::after{
-    background-image: url(static/img/down-arrow.png);
-}
 .accordion-button:not(.collapsed){
     box-shadow: none;
     background-color: #2575FC;
@@ -500,13 +489,6 @@
 /* MAIN CONTENT CSS */
 
 /* END CONTENT CSS */
-.endContent{
-    background: 
-        linear-gradient(rgba(62, 55, 255, 0.8), rgba(062, 55, 255, 0.8)),
-        url(static/img/pexels-shelagh-murphy-2883380.jpg);
-    background-position: center;
-    background-size: cover;
-}
 .endContent-container{
     padding: 3.5rem 0 2rem 0;
 }
@@ -612,7 +594,10 @@
     }
     /* HEADER KISMI */
     .firstDom{
-        height: 100vh;
+        height: auto !important;
+    }
+    .firstDom-behind{
+        padding-bottom: 25px;
     }
     .firstDom-behind-row{
         height: 70%;
@@ -622,6 +607,7 @@
     }
     .firstDom-behind-right{
         align-self: start;
+        margin-top: 2rem;
     }
     .behind-left-title h1{
         font-size: 50px;
@@ -665,11 +651,19 @@
         padding: 8px 20px;
     }
 }
+@media(max-width:768px){
+    .donateButton{
+        font-size: 13px;
+    }
+}
 @media(max-width:576px){
     .firstDom-behind-row{
         margin-left: 0;
         margin-right: 0;
     }
+    /* .donateButton{
+        
+    } */
     .behind-left-paragraph{
         margin-top: .7rem;
         margin-bottom: .7rem;

@@ -6,6 +6,31 @@
 {% endblock css-link %}
 
 {% block site-content %}
+<style>
+    .firstDom{
+        height: 80vh;
+        background: 
+            linear-gradient(rgba(62, 55, 255, 0.8), rgba(062, 55, 255, 0.8)),
+            url(static/img/pexels-shelagh-murphy-2883380.jpg);
+        background-position: center;
+        background-size: cover;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .endContent{
+        background: 
+            linear-gradient(rgba(62, 55, 255, 0.8), rgba(062, 55, 255, 0.8)),
+            url(static/img/pexels-shelagh-murphy-2883380.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .accordion-button::after{
+        background-image: url(static/img/down-arrow\(black\).png);
+    }
+    .accordion-button:not(.collapsed)::after{
+        background-image: url(static/img/down-arrow.png);
+    }
+</style>
 <!-- HEADER -->
 <header class="firstDom">
   <!-- NAVBAR -->
