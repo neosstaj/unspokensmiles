@@ -11,7 +11,7 @@ from user_app.models import Donations,DonationType
 from user_app.models import blog as BlogModels
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
+from django.contrib.sessions.models import Session
 API_KEY = 'sandbox-ybJixj0TVm9yQcaLZKYjN5hiAwUzFMcI'
 SECRET_KEY = 'sandbox-nW30QdMCvJ5HKsBoQXGH288DcJ4ZoaIV'
 BASE_URL = 'sandbox-api.iyzipay.com'
@@ -206,7 +206,19 @@ def result(request):
     print(sonuc[5][1])
     print(sonuc[6])
     user = request.user
+    if user is None or user is False:
+        session_id = request.COOKIES.get('sessionid')
+        try:
+            oturum = Session.objects.get(session_key=session_id)
+            oturum_verisi = oturum.get_decoded()
+            user = oturum_verisi.get('_auth_user_id')
+            return user
+        except Session.DoesNotExist:
+            messages.add_message(request,messages.ERROR,'Lütfen Giriş yapın giriş yaptıysanız hata nedeni iyzico apileri sıkıntılı (404)',extra_tags='payment-error')
+            return redirect('/')
+
     print('KULANICIIIssssI',user)
+    print('KULANICIIIssssI',request.user)
     for i in sonuc:
         print('sonuclar',i,'tipi',type(i))
     print('*0'*50)
@@ -219,7 +231,6 @@ def result(request):
         print('sonucsdasdasdasdasdas',sonuc[5][1])
         donation_type =  request.COOKIES.get('donationtype')
         quantity =  request.COOKIES.get('para')
-
         if donation_type is False or donation_type is None:
             messages.add_message(request,messages.ERROR,'Lütfen Donate Tipini admin panelden ekleyin Eror Code (524)',extra_tags='payment-error')
             return redirect('/')
