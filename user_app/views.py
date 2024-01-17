@@ -8,7 +8,7 @@ from user_app.models import blog as BlogModels
 
 
 def signup(request):
-    if request.user.is_authenticated== False:
+    if request.user.is_authenticated == False:
         if request.method == 'POST':
             POST = request.POST
             isim = POST.get('isim')
@@ -66,7 +66,13 @@ def signin(request):
         return redirect('/')
     
 
-
+def logout_view(request):
+    if request.user.is_authenticated:
+        logout(request)
+        return redirect('/')
+    else:
+        return redirect('/')
+    
 def aboutus(request):
     return render(request,'aboutus.html')
 

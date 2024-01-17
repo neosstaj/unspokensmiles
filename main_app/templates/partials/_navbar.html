@@ -119,6 +119,9 @@
         </a>
       </div>
       {% if request.user.is_authenticated %}
+      <div class="navbar-donete-button ms-2">
+        <a class="text-white text-decoration-none" href="{% url 'logout' %}"> <button class="donateButton">Çıkış Yap</button></a>
+      </div>
         {% else %}
         <div class="navbar-donete-button ms-2">
           <a class="text-white text-decoration-none" href="{% url 'signup' %}"> <button class="donateButton">Kayıt/Giriş</button></a>
