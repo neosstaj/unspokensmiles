@@ -219,10 +219,9 @@ def result(request):
         print('sonucsdasdasdasdasdas',sonuc[5][1])
         donation_type =  request.COOKIES.get('donationtype')
         quantity =  request.COOKIES.get('para')
-        if donation_type is None:
+        if donation_type is False:
             messages.add_message(request,messages.ERROR,'Lütfen Donate Tipini admin panelden ekleyin Eror Code (524)',extra_tags='payment-error')
             return redirect('/')
-
         user =  request.user
    
         # AYLIK ÜYELİK TİPİ İD 2 TEK SEFERLİK 1
