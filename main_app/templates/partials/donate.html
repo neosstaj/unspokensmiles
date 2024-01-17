@@ -1,0 +1,69 @@
+{% load static %}
+{% block css-link %}
+<link rel="stylesheet" href="{% static 'style/donate.css' %}" />
+{% endblock css-link %}
+
+
+<div class="donateHTMLv1">
+<form action="{% url 'payment'  %}" method="post">
+
+      </div>
+      <div class="DHTML col-12 col-lg-4">
+        <div class="row btn-row">
+          {% csrf_token %}
+          <div class="col-6 p-0 pe-1"> <button name="oneTime" type="button" id="ot"
+              class="btn  btn-outline-dark w-100 donate-btn-outline" onclick="OneTime(this)">One
+              Time</button>
+            <input type="" class="d-none" name="oneTime" id="ot_input">
+          </div>
+          <div class="col-6 p-0 "> <button name="monthly" type="button" id="mt" class="btn btn-light w-100 btn-color"
+              onclick="Monthly(this)">Monthly</button></div>
+          <input type="" class="d-none" name="monthly" id="mt_input">
+        </div>
+        <div class="row pt-1 btn-row">
+          <div class="col-12 p-0">
+
+            <div class="input-group ">
+              <span class="input-group-text donate-span">$</span>
+              <input type="text" name="price" id="input-donate" class="form-control donate-input shadow-none "
+                aria-label="">
+              <span class="input-group-text donate-span">USD</span>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-1">
+          <div class="col-12 p-0">
+            {% for message in messages %}
+            {% if 'payment-error' in message.tags %}
+            <div class="alert alert-danger text-center">
+              {{message}}
+            </div>
+            {% endif %}
+            {% if 'py-success' in message.tags %}
+            <div class="alert alert-success text-center">
+              {{message}}
+            </div>
+            {% endif %}
+            {% endfor %}
+            <button class="w-100 gift-btn mt-3 mb-3 donateDTGbutton"> <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                height="14px" width="14px" viewBox="0 0 512 512" style="vertical-align: inherit; margin-right: 3px;">
+                <path
+                  d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z">
+                </path>
+              </svg>Dedicate This Gift</button>
+          </div>
+        </div>
+        <div class="row pt-1">
+          <div class="col-12 p-0">
+            <button class="w-100 donate-btn f-18 donateDbutton " type="submit">
+              <a class="text-white text-decoration-none" {% if request.user.is_authenticated %} {% else %}
+                href="{% url 'signup' %}" {% endif %}>
+                DONATE
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

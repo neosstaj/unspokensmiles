@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
+
 .header{
     margin-left: 170px;
 }
@@ -32,6 +33,153 @@
     flex-direction: column;
     width: 48%;
    
+}
+
+
+.involvedDom{
+    height: 95vh;
+    background: 
+        linear-gradient(rgba(62, 55, 255, 0.8), rgba(62, 55, 255, 0.8));
+    background-position: center;
+    background-size: cover;
+    padding-left: 0;
+    padding-right: 0;
+}
+.involvedDom-behind{
+    height: 90%;
+    padding-left: 25px;
+}
+.involvedDom-behind-row{
+    height: 100%;
+}
+/* SOL TARAF */
+.involvedDom-behind-left{
+    align-self: center;
+}
+.involvedDom-left-title h1{
+    font-size: 80px;
+    font-weight: 800;
+    color: #fff;
+}
+
+@media screen and (max-width: 490px) and (min-width: 320px) {
+
+    .involvedDom-left-title h1{
+        font-size: 60px;
+    } 
+
+}
+
+@media screen and (max-width: 365px) and (min-width: 310px) {
+
+    .involvedDom-left-title h1{
+        font-size: 40px;
+    }
+    
+    .rightcontent1 h1{
+        font-size: 30px;
+    }
+
+}
+
+.involvedDom-left-paragraph{
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.involvedDom-left-buttons{
+    display: flex;
+    column-gap: 10px;
+}
+.involvedDom-left-buttons-donate button{
+    background-color: black;
+    color: #fff;
+    padding: 17px 25px;
+    border-radius: 25px;
+    border: none;
+    font-size: 15px;
+}
+.involvedDom-left-butttons-take button{
+    background-color: #3E37FF;
+    color: #fff;
+    padding: 16px 35px;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    font-size: 15px;
+    transition: background-color .3s,color .3s,border .3s;
+}
+.involvedDom-left-butttons-take button:hover{
+    color: #fff;
+    background-color: black;
+    border: 2px solid black;    
+}
+
+/* MAIN FIRST BÖLÜM */
+.involved-first{
+    margin-top: 4rem;
+}
+.first-header-title h1{
+    font-size: 65px;
+    color: #3E37FF;
+    font-weight: 600;
+}
+.first-header-border{
+    width: 60px;
+    height: 5px;
+    background-color: #3E37FF;
+    position: relative;
+    left: 15px;
+    border-radius: 30px;
+}
+.first-header-border::before{
+    content: "";
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    background-color: #3E37FF;
+    border-radius: 30px;
+}
+
+.midcontent{
+    display: flex;
+}
+
+.donateDTGbutton{
+    height: 35px;
+    border-radius: 25px;
+}
+
+.donateDTGbutton:hover{
+    background-color: grey;
+    color: white;
+}
+
+.donateDbutton{
+    height: 60px;
+    background-color: #4e4f50;
+}
+
+.donateDbutton:hover{
+    background-color: grey;
+}
+
+@media screen and (max-width: 770px) and (min-width: 0px) {
+
+    .involvedDom {
+        height: 114vh;
+    }
+
+    .midcontent {
+        display: block;
+    }
+
+}
+
+.DHTML{
+    margin-top: 15%;
+    height: 30vh;
 }
 
 /* CONTENT START */
@@ -119,6 +267,7 @@
 
 @media screen and (max-width: 770px) and (min-width: 470px) {
 
+
     .carousel li{
         width: 300px;
         margin-left: 50px;
@@ -128,6 +277,16 @@
         width: 250px;
         height: 20vh;
     }
+
+    .rightcontent1 h1 {
+        font-size: 70px;
+    }
+
+    .rightcontent2 h6{
+        font-size: 70px;
+    }
+
+
 }
 
 @media screen and (max-width: 470px) and (min-width: 320px) {
@@ -139,6 +298,10 @@
     .carousel img {
         width: 210px;
         height: 120px;
+    }
+
+    .rightcontent1 h1 {
+        font-size: 60px;
     }
 
 
@@ -212,6 +375,7 @@ text-decoration: none;
 
 .groupbox2{
     background-color: #F8FAFF;
+    height: 600px;
     margin-bottom: 3.5rem;
     border-radius: 5%;
     border-bottom: 4px solid #3E37FF;
@@ -322,7 +486,6 @@ text-decoration: none;
     }
 
     .group2{
-        border: 2px solid black;
         width: 100%;
         margin-left: 0;
     }
@@ -344,7 +507,6 @@ text-decoration: none;
 
     .groupbox2{
         width: 100%;
-        height: 65vh;
         margin-bottom: 90px;
     }
     
@@ -387,7 +549,6 @@ text-decoration: none;
     }
 
     .groupbox3{
-        margin-top: 400px;
         width: 100%;
         margin-bottom: 30px;
         height: 90vh;
@@ -451,6 +612,7 @@ text-decoration: none;
     
         .groupbox2{
             width: 100%;
+            height: 1024px;
             margin-bottom: 90px;
         }
         
@@ -478,27 +640,6 @@ text-decoration: none;
             text-align: center;
         }
     
-        .boxinright1 img{
-            background-size: 100%;
-            border-radius: 7% 7% 7% 7% ;
-            height: 20vh;
-            margin-right: 20px;
-        }
-    
-        .boxinright2 img{
-            background-size: 100%;
-            border-radius: 7% 7% 7% 7% ;
-            height: 20vh;
-            margin-right: 20px;
-        }
-    
-        .boxinright3 img{
-            background-size: 100%;
-            border-radius: 7% 7% 7% 7% ;
-            height: 20vh;
-            margin-right: 20px;
-        }
-    
         .boxinleft h5{
             font-size: 20px;
         }
@@ -509,7 +650,6 @@ text-decoration: none;
         }
     
         .groupbox3{
-            margin-top: 400px;
             width: 100%;
             margin-bottom: 30px;
             height: 90vh;
@@ -534,6 +674,41 @@ text-decoration: none;
     
     }
 
+
+    @media screen and (max-width: 470px) and (min-width: 320px) {
+
+        .carousel li{
+            margin-left: 50px;
+        }
+    
+        .carousel img {
+            width: 210px;
+            height: 120px;
+        }
+    
+        .rightcontent1 h1 {
+            font-size: 60px;
+        }
+    
+        .rightcontent2 h6{
+            font-size: 60px;
+        }
+    
+    }
+    
+
+    
+    @media screen and (max-width: 375px) and (min-width: 300px) {
+    
+        .groupbox1 h6{
+            font-size: 50px;
+        }
+
+        .groupbox2{
+            height: 1100px;
+        }
+    
+    }
 
 /* CONTENTUP END */
 
@@ -569,16 +744,8 @@ text-decoration: none;
         display: none;
     }
 
-    .rightcontent1 h1 {
-        font-size: 70px;
-    }
-
     .rightcontent1 h2 {
         font-size: 40px;
-    }
-
-    .rightcontent2 h6{
-        font-size: 70px;
     }
 
     .contentmid{
@@ -602,9 +769,55 @@ text-decoration: none;
 }
 
 
+@media screen and (max-width: 7700px) and (min-width: 480px) {
 
+    .boxinright1 img{
+        background-size: 100%;
+        border-radius: 7% 7% 7% 7% ;
+        height: 20vh;
+        margin-right: 20px;
+    }
 
+    .boxinright2 img{
+        background-size: 100%;
+        border-radius: 7% 7% 7% 7% ;
+        height: 20vh;
+        margin-right: 20px;
+    }
 
+    .boxinright3 img{
+        background-size: 100%;
+        border-radius: 7% 7% 7% 7% ;
+        height: 20vh;
+        margin-right: 20px;
+    }
+
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) {
+
+    .boxinright1 img{
+        background-size: 100%;
+        border-radius: 7% 7% 7% 7% ;
+        height: 15vh;
+        margin-right: 20px;
+    }
+
+    .boxinright2 img{
+        background-size: 100%;
+        border-radius: 7% 7% 7% 7% ;
+        height: 15vh;
+        margin-right: 20px;
+    }
+
+    .boxinright3 img{
+        background-size: 100%;
+        border-radius: 7% 7% 7% 7% ;
+        height: 15vh;
+        margin-right: 20px;
+    }
+
+}
 
 
 

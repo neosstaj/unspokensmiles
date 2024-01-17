@@ -2,9 +2,70 @@
 {% load static %}
 {% block css-link %}
 <link rel="stylesheet" href="{% static 'style/ourwork.css' %}" />
+<link rel="stylesheet" href="{% static 'style/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'style/footer.css' %}">
 <link rel="stylesheet" href="https://unpkg.com/@splidejs/splide@3.0.8/dist/css/splide.min.css">
 {% endblock css-link %}
 {% block site-content %}
+
+
+
+<style>
+  .involvedDom{
+      background: 
+          linear-gradient(rgba(62, 55, 255, 0.8), rgba(62, 55, 255, 0.8)),
+          url(static/img/pexels-kwaku-griffin-14346814.jpg);
+      background-position: center;
+      background-size: cover;
+      padding-left: 0;
+      padding-right: 0;
+  }
+  .endContent{
+      background: 
+          linear-gradient(rgba(62, 55, 255, 0.8), rgba(062, 55, 255, 0.8)),
+          url(static/img/pexels-shelagh-murphy-2883380.jpg);
+      background-position: center;
+      background-size: cover;
+      margin-top: 5rem;
+  }
+</style>
+
+<header class="involvedDom">
+  <!-- NAVBAR -->
+  <nav class="container navbar-container">
+      {% include "partials/_navbar.html" %}
+  </nav>
+  <!-- HEADER ORTA KISIM -->
+  <section class="container involvedDom-behind">
+      <!-- SOL TARAF -->
+      <div class="row involvedDom-behind-row">
+        <div class="midcontent">
+
+          <article class="col-lg-8 involvedDom-behind-left">
+            <div class="involvedDom-left">
+              <div class="involvedDom-left-title">
+                <h1>DELIVERING</h1>
+                <h1>DENTAL CARE</h1>
+              </div>
+              <div class="involvedDom-left-paragraph">
+                <h5>Through public-private partnerships, we deliver effective community-based primary dental care services to the most underserved communities in Costa Rica.</h5>
+              </div>
+              <div class="involvedDom-left-buttons">
+                <div class="involvedDom-left-buttons-donate">
+                  <button>Subscribe Today</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          {% include "partials/donate.html" %}
+        </div>
+      </div>
+  </section>
+</header>
+
+
+
   <div class="container">
     <div class="contentup ">
       <div class="group1 ">
@@ -226,6 +287,7 @@
           </div>
         </div>
       </div>
+      {% include "partials/_footer.html" %}
 
 
       <script src="https://unpkg.com/@splidejs/splide@3.0.8/dist/js/splide.min.js"></script>

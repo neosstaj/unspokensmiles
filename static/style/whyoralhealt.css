@@ -1,5 +1,105 @@
-.container{
-    margin-top: 100px;
+
+.involvedDom{
+    height: 95vh;
+    background: 
+        linear-gradient(rgba(62, 55, 255, 0.8), rgba(62, 55, 255, 0.8));
+    background-position: center;
+    background-size: cover;
+    padding-left: 0;
+    padding-right: 0;
+}
+.involvedDom-behind{
+    height: 90%;
+    padding-left: 25px;
+}
+.involvedDom-behind-row{
+    height: 100%;
+}
+/* SOL TARAF */
+.involvedDom-behind-left{
+    align-self: center;
+}
+.involvedDom-left-title h1{
+    font-size: 80px;
+    font-weight: 800;
+    color: #fff;
+}
+
+@media screen and (max-width: 490px) and (min-width: 320px) {
+
+    .involvedDom-left-title h1{
+        font-size: 60px;
+    } 
+
+}
+
+@media screen and (max-width: 365px) and (min-width: 310px) {
+
+    .involvedDom-left-title h1{
+        font-size: 40px;
+    } 
+
+}
+
+
+.involvedDom-left-paragraph{
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.involvedDom-left-buttons{
+    display: flex;
+    column-gap: 10px;
+}
+.involvedDom-left-buttons-donate button{
+    background-color: black;
+    color: #fff;
+    padding: 17px 25px;
+    border-radius: 25px;
+    border: none;
+    font-size: 15px;
+}
+.involvedDom-left-butttons-take button{
+    background-color: #3E37FF;
+    color: #fff;
+    padding: 16px 35px;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    font-size: 15px;
+    transition: background-color .3s,color .3s,border .3s;
+}
+.involvedDom-left-butttons-take button:hover{
+    color: #fff;
+    background-color: black;
+    border: 2px solid black;
+}
+
+/* MAIN FIRST BÖLÜM */
+.involved-first{
+    margin-top: 4rem;
+}
+.first-header-title h1{
+    font-size: 65px;
+    color: #3E37FF;
+    font-weight: 600;
+}
+.first-header-border{
+    width: 60px;
+    height: 5px;
+    background-color: #3E37FF;
+    position: relative;
+    left: 15px;
+    border-radius: 30px;
+}
+.first-header-border::before{
+    content: "";
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    background-color: #3E37FF;
+    border-radius: 30px;
 }
 
 .contentup{
@@ -54,6 +154,10 @@
 
 @media screen and (max-width: 992px) and (min-width: 767px) {
 
+    .involvedDom {
+        height: 111vh;
+    }
+    
     .carousel li{
         margin-left: 50px;
     }
