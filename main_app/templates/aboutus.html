@@ -5,6 +5,7 @@
 {% block css-link %}
 <link rel="stylesheet" href="{% static 'style/navbar.css' %}">
 <link rel="stylesheet" href="{% static 'style/aboutUs.css' %}">
+<link rel="stylesheet" href="{% static 'style/footer.css' %}">
 {% endblock css-link %}
 {% block site-content %}
   
@@ -28,7 +29,9 @@
             <div class="col-12 col-lg-7 navbar-donate ">
                 
                     <div class="navbar-donete-button d-block d-lg-flex mt-0 mt-lg-4">
-                      <button class="donateButton1">DONATE NOW</button>
+                      <button class="donateButton1">
+                        <a class="text-decoration-none text-white" href="{% url 'donate' %}">DONATE NOW</a>
+                      </button>
                       <button class="donateButton2 ms-0 ms-lg-3">Take Action</button>
                     </div>
             </div>
@@ -127,7 +130,7 @@
   </div>
 </section>
 
-<section>
+<section class="pb-4">
   <div class="container">
     <div class="row">
       <div class="col-1"></div>
@@ -192,6 +195,10 @@
   </div>
 </section>
 
+{% include "partials/_footer.html" %}
+
+    <script src="{% static 'js/index.js' %}"></script>    
+
      <!-- FONT AWESOME ICON CDN-->
      <script src="https://kit.fontawesome.com/a09e04a105.js" crossorigin="anonymous"></script>
 
@@ -200,12 +207,6 @@
     
     <!-- HAMBURGER ICON CLICK TANIMLANMASI(RESPONSIVE TASARIMDA DROPDOWN MENULERI AÇIYOR) -->
     <script>
-        const clickIcon=document.querySelector(".hamburger-icon")
-        const navbarList=document.querySelector(".navbar-menu-list")
-        clickIcon.addEventListener("click",function(){
-            navbarList.classList.toggle("responsive")
-        })
-
 
         window.addEventListener('scroll', function () {
         var scrollHeight = window.scrollY;

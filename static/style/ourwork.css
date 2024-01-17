@@ -212,7 +212,6 @@ text-decoration: none;
 
 .groupbox2{
     background-color: #F8FAFF;
-    height: 600px;
     margin-bottom: 3.5rem;
     border-radius: 5%;
     border-bottom: 4px solid #3E37FF;
@@ -310,12 +309,10 @@ text-decoration: none;
 @media screen and (min-width: 770px) and (max-width: 1024px) {
 
     .contentup{
-        border: 2px solid rgb(231, 47, 47);
         display: block;
     }
 
     .group1{
-        border: 3px solid grey;
         max-width: 95%;
         width: auto;
     }

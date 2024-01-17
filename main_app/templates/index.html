@@ -3,6 +3,16 @@
 
 {% block site-content %}
 {% include "partials/_header.html" %}
+<style>
+  .cart-content{
+    overflow: hidden;
+    height: 190px;
+  }
+  .card-body-section-3{
+    height: 538px;
+  }
+</style>
+
 <!-- DONATE -->
 
 <!-- <section>
@@ -412,7 +422,7 @@ DONATE END -->
         {% for blogContent in blog  %}
           
   
-        <div class="col-12  pt-3 pt-lg-0   col-lg-4 ">
+        <div class="col-12  pt-3 pt-lg-0 col-lg-4 ">
           <div class="card border-0 card-radius">
             <div class="card-img-container">
               <img src="{{blogContent.cover_image.url}}" style="max-width: 100%; height: 300px; object-fit: cover; "
@@ -424,7 +434,7 @@ DONATE END -->
             <div class="card-body d-flex justify-content-between flex-column card-body-section-3">
               <div class="card-title-container">
                 <h5 class="card-title f-26 blue">{{blogContent.title}}</h5>
-                <p class="card-text">{{blogContent.content|safe}}</p>
+                <p class="card-text cart-content">{{blogContent.content|striptags}}</p>
               </div>
               <div class="sub-title-container">
                 <hr class="mb-1">

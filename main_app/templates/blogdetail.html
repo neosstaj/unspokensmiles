@@ -16,7 +16,7 @@
             height: 80vh;
             background: 
                 linear-gradient(rgba(62, 55, 255, 0.8), rgba(62, 55, 255, 0.8)),
-                url(static/img/pexels-pixabay-262508.jpg);
+                url({{blog.cover_image.url}});
             background-position: center;
             background-size: cover;
             padding-left: 0;
@@ -25,29 +25,30 @@
     </style>
 
     <!-- HEADER -->
-    <header class="blogDom">
+    <header class="blogDom blog-detail">
         <!-- NAVBAR -->
         <nav class="container navbar-container">
           {% include "partials/_navbar.html" %}
         </nav>
         <!-- HEADER ORTA KISIM -->
-        <section class="container blogDom-behind">
+        <section class="container blogDom-behind text-center">
             <!-- SOL TARAF -->
-            <div class="row blogDom-behind-row">
-                <article class="col-lg-8 blogDom-behind-left">
+            <div class="row blogDom-behind-row justify-content-center">
+                <article class="col-12 blogDom-behind-left">
                     <div class="blogDom-left">
                         <div class="blogDom-left-title">
                             <h1>{{blog.title}}</h1>
-                         </div>
-                        <div class="blogDom-left-paragraph">
-                            <h5>Stay updated with the latest news from.</h5>
                         </div>
-                        <div class="blogDom-left-buttons">
-                            <div class="blogDom-left-buttons-donate">
-                                <button>Sign Up</button>
-                            </div>
-                            <div class="blogDom-left-butttons-take">
-                                <button>Take Action</button>
+                        <div class="blogDom-calendar justify-content-center">
+                            <div class="blogDom-calander-border">
+                                <div class="blogDom-left-title">
+                                    <span>By UNSPOKEN SMILES</span>
+                                </div>
+                                <div class="blogDom-borderLittle"></div>
+                                <div class="blogDom-left-date">
+                                    <span><i class="fa-solid fa-calendar-days"></i></span>
+                                    <span class="ms-1">{{blog.created_date}}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
