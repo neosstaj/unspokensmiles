@@ -210,44 +210,21 @@ def result(request):
         print(sonuc[0][1])
         print(sonuc[5][1])
         print(sonuc[6])
-        user = request.user
-        print('user type' , type(user))
-        if request.user.is_authenticated is False or request.user.is_authenticated is None:
-            user = request.COOKIES.get('manueluser')
-            print('birinci kısım user ne dönüyor',user)
-            user = User.objects.filter(username = user).first()
-        print(user)
-        if request.user is False or request.user is None:
-            messages.add_message(request,messages.ERROR,'Lütfen Giriş yapın giriş yaptıysanız hata nedeni iyzico kartının sıkıntılı olması readme.md dosyasındaki kart numarasını giriniz (404)',extra_tags='payment-error')
-            return redirect('/')
+        print('*'*50)
+        print('sonucsdasdasdasdasdas',sonuc[5][1])
 
         print('KULANICIIIssssI',user)
         for i in sonuc:
             print('sonuclar',i,'tipi',type(i))
         print('*0'*50)
+        print(request.COOKIES)
+        print('*0'*50)
         print('sözlük token')
+             # quantity = sonuc[5][1]
         print(sozlukToken)
         print('*0'*50)
         if sonuc[0][1] == 'success':
-            # quantity = sonuc[5][1]
-            print('*'*50)
-            print('sonucsdasdasdasdasdas',sonuc[5][1])
-            donation_type =  request.COOKIES.get('donationtype')
-            quantity =  request.COOKIES.get('para')
-            if donation_type is False or donation_type is None:
-                messages.add_message(request,messages.ERROR,'Lütfen Donate Tipini admin panelden ekleyin Eror Code (524)',extra_tags='payment-error')
-                return redirect('/')   
-            # AYLIK ÜYELİK TİPİ İD 2 TEK SEFERLİK 1
-            if donation_type == '1':
-                donation_type = DonationType.objects.filter(title = 'Tek Seferlik').first()
-            else:
-                donation_type = DonationType.objects.filter(title = 'Aylık').first()      
-            Donations.objects.create(
-                    user =user,
-                    donation_type = donation_type,
-                    quantity = quantity
-                )
-            
+           
             return redirect('success')
         
         elif sonuc[0][1] == 'failure':
@@ -259,8 +236,34 @@ def result(request):
         messages.add_message(request, messages.ERROR, f'hata sebebi {e}', extra_tags='payment-error')
         return redirect('/')
 def success(request):
-    messages.add_message(request, messages.INFO, "Bağışınız İçin Teşekkür Ederiz",extra_tags='py-success')
-    return redirect('/')
+        user = request.user
+        print('user type' , type(user))
+        if request.user.is_authenticated is False or request.user.is_authenticated is None:
+            user = request.COOKIES.get('manueluser')
+            print('birinci kısım user ne dönüyor',user)
+            user = User.objects.filter(username = user).first()
+        print(user)
+        if request.user is False or request.user is None:
+            messages.add_message(request,messages.ERROR,'Lütfen Giriş yapın giriş yaptıysanız hata nedeni iyzico kartının sıkıntılı olması readme.md dosyasındaki kart numarasını giriniz (404)',extra_tags='payment-error')
+            return redirect('/')
+        donation_type =  request.COOKIES.get('donationtype')
+        quantity =  request.COOKIES.get('para')
+        if donation_type is False or donation_type is None:
+                messages.add_message(request,messages.ERROR,'Lütfen Donate Tipini admin panelden ekleyin Eror Code (524)',extra_tags='payment-error')
+                return redirect('/')   
+            # AYLIK ÜYELİK TİPİ İD 2 TEK SEFERLİK 1
+        if donation_type == '1':
+                donation_type = DonationType.objects.filter(title = 'Tek Seferlik').first()
+        else:
+                donation_type = DonationType.objects.filter(title = 'Aylık').first()      
+        Donations.objects.create(
+                    user =user,
+                    donation_type = donation_type,
+                    quantity = quantity
+                )
+            
+        messages.add_message(request, messages.INFO, "Bağışınız İçin Teşekkür Ederiz",extra_tags='py-success')
+        return redirect('/')
     
 
 def fail(request):
