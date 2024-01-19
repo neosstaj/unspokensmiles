@@ -1,4 +1,6 @@
 from django.shortcuts import render,redirect
+from django.core.mail import BadHeaderError, send_mail
+from django.shortcuts import render,redirect
 import iyzipay
 import json
 from django.http import HttpResponse,HttpResponseRedirect
@@ -12,6 +14,7 @@ from user_app.models import blog as BlogModels
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.sessions.models import Session
+from config.settings import EMAIL_HOST_USER
 API_KEY = 'sandbox-ybJixj0TVm9yQcaLZKYjN5hiAwUzFMcI'
 SECRET_KEY = 'sandbox-nW30QdMCvJ5HKsBoQXGH288DcJ4ZoaIV'
 BASE_URL = 'sandbox-api.iyzipay.com'
@@ -224,7 +227,6 @@ def result(request):
         print(sozlukToken)
         print('*0'*50)
         if sonuc[0][1] == 'success':
-           
             return redirect('success')
         
         elif sonuc[0][1] == 'failure':
@@ -261,7 +263,15 @@ def success(request):
                     donation_type = donation_type,
                     quantity = quantity
                 )
-            
+        subject = "Bağışınız İçin Teşekkürler" 
+        email_from = EMAIL_HOST_USER
+        recipient_list = [request.user.email]
+        message = f"{quantity}$ Değerinde bağışınız için teşekkürler {request.user.username}"
+        send_mail(
+                    subject,
+                    message,
+                    email_from,
+                    recipient_list,)    
         messages.add_message(request, messages.INFO, "Bağışınız İçin Teşekkür Ederiz",extra_tags='py-success')
         return redirect('/')
     

@@ -43,7 +43,7 @@
                                 <ul class="subTitle-hesaplist">
                                     <li class="subTitle-hesapList-link">
                                         <i class="left-icons fa-solid fa-user"></i>
-                                        <a class="right-link" href="#">Üyelik Bilgilerim</a>
+                                        <a class="right-link" href="{% url 'profil' %}">Üyelik Bilgilerim</a>
                                     </li>
                                     <li class="subTitle-hesapList-link">
                                         <i class="left-icons fas fa-sign-out-alt"></i>
@@ -75,28 +75,32 @@
                                         <h5 class="help-row-h5">Bağış Tutarı</h5>
                                     </div>
                                 </div>
+                                {% for Donate  in Donates  %}
+                                  
                                 <div class="row help-all text-center mt-3">
                                     <div class="col-4 help-type-content">
-                                        <span>Tek Seferlik</span>
+                                        <span>{{Donate.donation_type.title}}</span>
                                     </div>
                                     <div class="col-4 help-date-content">
-                                        <span>19.01.2024</span>
+                                        <span>{{Donate.created_date}}</span>
                                     </div>
                                     <div class="col-4 help-tutar-content">
-                                        <span>100 $</span>
+                                        <span>{{Donate.quantity}}$</span>
                                     </div>
                                 </div>
-                                <div class="row help-all text-center mt-3">
-                                    <div class="col-4 help-type-content">
-                                        <span>Aylık</span>
-                                    </div>
-                                    <div class="col-4 help-date-content">
-                                        <span>19.01.2024</span>
-                                    </div>
-                                    <div class="col-4 help-tutar-content">
-                                        <span>200 $</span>
-                                    </div>
+                                {% empty %}
+                                <h1 class="text-center pt-4 ">Henüz Bağışınız Yok Bağış Yapmak için <strong> 
+                                    > 
+                                    <a class="text-decoration-none text-white " href="{% url 'donate' %}">Donate</a>
+                                    </strong>
+                                    <
+                                    </h1>
+
+                                {% endfor %}
+                         
                                 </div>
+                      
+
                             </div>
                         </div>
                 </article>

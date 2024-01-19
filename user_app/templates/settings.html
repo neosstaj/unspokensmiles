@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css-link %}
+<link rel="stylesheet" href="{% static 'style/profil.css' %}">
+<link rel="stylesheet" href="{% static 'style/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'style/footer.css' %}">
+{% endblock css-link %}
+
+{% block site-content %}
+<style>
+    .profile {
+        background:
+            linear-gradient(rgba(62, 55, 255, 0.8), rgba(062, 55, 255, 0.8)),
+            url(static/img/pexels-shelagh-murphy-2883380.jpg);
+        background-position: center;
+        background-size: cover;
+        padding-left: 0;
+        padding-right: 0;
+    }
+</style>
+
+<header class="profile">
+    <nav class="container navbar-container">
+        {% include "partials/_navbar.html" %}
+    </nav>
+    <main class="container hesap-container">
+
+        <section class="row hesap-row">
+            <article class="col-lg-3 hesap-left">
+                <div class="hesap-left-content">
+                    <div class="leftContent-header">
+                        <div class="leftContent-header-user">
+                            <div class="headerUser-text text-center">
+                                <h6 class="headerUser-text-title">Hoş Geldiniz</h6>
+                                <h6 class="header-user-name">{{request.user|title}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-content-altHeader">
+                        <div class="altHeader-title">
+                            <h6>Hesabım</h6>
+                        </div>
+                        <div class="altHeader-subTitle">
+                            <ul class="subTitle-hesaplist">
+                                <li class="subTitle-hesapList-link">
+                                    <i class="left-icons fa-solid fa-user"></i>
+                                    <a class="right-link" href="{% url 'donations' %}">Yaptığım Bağışlar</a>
+                                </li>
+                                <li class="subTitle-hesapList-link">
+                                    <i class="left-icons fas fa-sign-out-alt"></i>
+                                    <a class="right-link right-link-not" href="{% url 'logout' %}"><strong>Güvenli
+                                            Çıkış</strong></a>
+                                </li>
+                                <li class="subTitle-hesapList-link">
+                                    <i class="left-icons fa-solid fa-user-slash"></i>
+                                    <a class="right-link right-link-not" href="{% url 'delete' %}"><strong>Hesabımı
+                                            Sil</strong></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="col-lg-9 hesap-right pt-4 pt-lg-3">
+                <div class="hesap-right-content">
+                    <div class="right-content-title text-center">
+                        <h3>Üyelik Bilgilerim</h3>
+                    </div>
+                    <div class="help mt-4">
+                        <div class="row">
+                            <div class="col-6  text-white">
+                                <form action="{% url 'profil' %}" method="post">
+                                    {% csrf_token %}
+
+                                    {{password_form}}
+                                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                                </form>
+                            </div>
+                            <div class="col-6 text-white">
+                                <form action="{% url 'profil' %}" method="post">
+                                    {% csrf_token %}
+
+                                    {{user_form}}
+                                    <button type="submit" class="btn btn-primary">Güncelle</button>
+
+                                </form>
+                            </div>
+                        </div>
+             
+                        {% for message in messages  %}
+                        {% if 'succes-sifre' in message.extra_tags %}
+                          <div class="alert alert-success">
+                               <p class="text-danger ">{{ message }}</p>
+                          </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% for message in messages  %}
+                        {% if 'error-sifre' in message.extra_tags %}
+                          <div class="alert alert-danger text-danger ">
+                               <p class="text-danger">{{ message|safe }}</p>
+                          </div>
+                        {% endif %}
+                        {% endfor %}    
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+</header>
+
+
+{% include "partials/_footer.html" %}
+<script src="{% static 'js/index.js' %}"></script>
+
+{% endblock site-content %}

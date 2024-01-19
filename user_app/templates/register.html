@@ -34,6 +34,11 @@
           {{message}}
         </div>
         {% endif %}
+        {% if 'signin' in message.tags %}
+        <div style="color: green;">
+          {{message}}
+        </div>
+        {% endif %}
         {% endfor %}
 
       </form>
@@ -46,11 +51,11 @@
           <input type="text" placeholder="Username" name="isim" />
         </div>
         <div class="input-field">
-          <i class="fas fa-envelope"></i>
+          <i class="fas fa-user"></i>
           <input type="text" name="soyisim" placeholder="soyisim" />
         </div>
         <div class="input-field">
-          <i class="fas fa-lock"></i>
+          <i class="fas fa-envelope"></i>
           <input type="email" placeholder="email" name="email" />
         </div>
         <div class="input-field">
