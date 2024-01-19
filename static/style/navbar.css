@@ -215,4 +215,10 @@
     .behind-left-buttons{
         justify-content: center;
     }
+    .media-none{
+        display: none;
+    }
+    .navbar-icon{
+        margin-left: 10px;
+    }
 }

@@ -35,19 +35,10 @@
    
 }
 
-
-.involvedDom{
-    height: 95vh;
-    background: 
-        linear-gradient(rgba(62, 55, 255, 0.8), rgba(62, 55, 255, 0.8));
-    background-position: center;
-    background-size: cover;
-    padding-left: 0;
-    padding-right: 0;
-}
 .involvedDom-behind{
     height: 90%;
     padding-left: 25px;
+    padding: 50px 0 50px 25px;
 }
 .involvedDom-behind-row{
     height: 100%;
@@ -65,7 +56,7 @@
 @media screen and (max-width: 490px) and (min-width: 320px) {
 
     .involvedDom-left-title h1{
-        font-size: 60px;
+        font-size: 40px;
     } 
 
 }

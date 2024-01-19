@@ -25,7 +25,7 @@
     </nav>
     <main class="container hesap-container">
 
-        <section class="row hesap-row">
+        <section class="row hesap-row ms-0 me-0">
             <article class="col-lg-3 hesap-left">
                 <div class="hesap-left-content">
                     <div class="leftContent-header">
@@ -67,8 +67,8 @@
                         <h3>Üyelik Bilgilerim</h3>
                     </div>
                     <div class="help mt-4">
-                        <div class="row">
-                            <div class="col-6  text-white">
+                        <div class="row ms-0 me-0">
+                            <div class="col-12 col-md-6 text-white">
                                 <form action="{% url 'profil' %}" method="post">
                                     {% csrf_token %}
 
@@ -76,7 +76,7 @@
                                     <button type="submit" class="btn btn-primary">Güncelle</button>
                                 </form>
                             </div>
-                            <div class="col-6 text-white">
+                            <div class="col-12 col-md-6 text-white">
                                 <form action="{% url 'profil' %}" method="post">
                                     {% csrf_token %}
 
