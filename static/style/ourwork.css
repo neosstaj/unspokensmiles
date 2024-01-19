@@ -177,17 +177,50 @@
 
 }
 
+@media (max-width: 794px) and (min-width: 770px) {
+
+.involvedDom-left-title h1{
+    font-size: 70px;
+}
+
+}
+
 .DHTML{
     margin-top: 15%;
     height: 30vh;
+}
+
+@media (max-width: 992px) and (min-width: 771px) {
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
 }
 
 /* CONTENT START */
 
 
 /* CONTENTUP START */
+
 .contentup{
     display: flex;
+    width: 90%;
+}
+
+@media screen and (max-width: 1295px) and (min-width: 0px) {
+
+    .contentup{
+        width: 85%;
+    }
+
+}
+
+@media screen and (max-width: 1132px) and (min-width: 0px) {
+
+    .contentup{
+        width: 75%;
+    }
+
 }
 
 .group1{
@@ -473,6 +506,7 @@ text-decoration: none;
 @media screen and (min-width: 770px) and (max-width: 1024px) {
 
     .contentup{
+        width: 100%;
         display: block;
     }
 
@@ -769,7 +803,7 @@ text-decoration: none;
 }
 
 
-@media screen and (max-width: 7700px) and (min-width: 480px) {
+@media screen and (max-width: 770px) and (min-width: 480px) {
 
     .boxinright1 img{
         background-size: 100%;
