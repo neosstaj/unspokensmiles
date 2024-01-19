@@ -39,6 +39,8 @@ urlpatterns = [
     path('involved',involved,name='involved'),
     path('ourwork',ourwork,name='ourwork'),
     path('whyoralhealt',whyoralhealt,name='whyoralhealt'),
+    path('user',profil,name="profil"),
+    path('delete',userDelete,name='delete'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
 

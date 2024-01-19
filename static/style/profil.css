@@ -1,0 +1,116 @@
+.hesap-container{
+    height: 100%;
+    padding: 80px 0;
+}
+.hesap-row{
+    height: 100%;
+}
+.hesap-left{
+    border: 1px solid #B7B7B7;
+    padding: 20px;
+}
+.hesap-right{
+    padding-right: 0;
+}
+.leftContent-header{
+    border: 1px solid #B7B7B7;
+    padding: 10px;
+}
+.headerUser-text-title{
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+}
+.header-user-name{
+    font-size: 23px;
+    font-weight: 600;
+    color: #fff;
+}
+.altHeader-title{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1.5px solid #B7B7B7;
+}
+.altHeader-title h6{
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+.altHeader-subTitle{
+    margin-top: 20px;
+}
+.subTitle-hesaplist{
+    list-style: none;
+    padding-left: 0;
+}
+.subTitle-hesapList-link{
+    margin-bottom: 10px;
+}
+.left-icons{
+    transition: color .2s;
+    color: #fff;
+    font-size: 20px;
+}
+.right-link{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color .2s;
+    font-size: 18px;
+    margin-left: 7px;
+}
+.subTitle-hesapList-link:hover
+.right-link{
+    color: black;
+}
+.subTitle-hesapList-link:hover
+.left-icons{
+    color: black;
+}
+.right-link-not{
+    font-size: 20px;
+}
+.right-content-title h3{
+    color: #fff;
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+.help-all{
+    margin-left: 0;
+    margin-right: 0;
+}
+.help-all span{
+    font-size: 18px;
+    color: rgb(206, 201, 201);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.help-type, .help-date, .help-tutar{
+    padding-right: 0;
+    padding-left: 0;
+}
+.help-row{
+    margin-left: 0;
+    margin-right: 0;
+}
+.help-row-h5{
+    display: inline-block;
+    color: #fff;
+    font-size: 25px;
+    border-bottom: 1px solid #fff;
+    padding: 0 30px 10px 30px;
+    margin-block: 0;
+}
+@media(max-width:576px){
+    .hesap-left{
+        border: none;
+    }
+    .help-row-h5{
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .help-all span{
+        font-size: 16px;
+    }
+}

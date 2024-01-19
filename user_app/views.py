@@ -99,3 +99,12 @@ def ourwork(request):
     return render(request,'ourwork.html')
 def whyoralhealt(request):
     return render(request,'whyoralhealt.html')
+
+def profil(request):
+    return render(request,"profil.html")
+
+
+def userDelete(request):
+    user = request.user
+    user.delete()
+    return redirect("signup")
