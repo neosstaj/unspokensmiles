@@ -30,6 +30,11 @@
         <input type="submit" value="Giriş Yap" class="btn solid" />
         {% for message in messages %}
         {% if 'signin-error' in message.tags %}
+        <div  style="color: red;">
+          {{message}}
+        </div>
+        {% endif %}
+        {% if 'logout-tags' in message.tags %}
         <div style="color: red;">
           {{message}}
         </div>

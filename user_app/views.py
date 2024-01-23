@@ -62,7 +62,7 @@ def signin(request):
                     user = authenticate(request,username = username,password = password)
                     if user:
                         login(request,user)
-                        messages.add_message(request,messages.ERROR,'Giriş başarılı',extra_tags='signin')
+                        messages.add_message(request,messages.SUCCESS,'Giriş başarılı',extra_tags='signin')
                         return redirect('/')
                     else:
                         messages.add_message(request,messages.ERROR,'E postanız veya şifreniz yanlış',extra_tags='signin-error')
@@ -82,7 +82,8 @@ def signin(request):
 def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
-        return redirect('/')
+        messages.add_message(request,messages.ERROR,'Çıkış yapıldı',extra_tags='logout-tags')
+        return redirect("signup")
     else:
         return redirect('/')
     
@@ -162,4 +163,5 @@ def profil(request):
 def userDelete(request):
     user = request.user
     user.delete()
+    messages.add_message(request,messages.ERROR,'Hesabınız başarıyla silinmiştir',extra_tags='signin-error')
     return redirect("signup")
